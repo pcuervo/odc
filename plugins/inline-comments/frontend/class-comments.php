@@ -1,8 +1,6 @@
 <?php
 class INCOM_Comments extends INCOM_Frontend {
 
-	private $loadPluginInfoHref = 'http://kevinw.de/inline-comments/';
-	private $loadPluginInfoTitle = 'Inline Comments by Kevin Weber';
 	private $loadCancelLinkText = 'Cancel';
 	private $DataIncomValue = NULL;
 	private $DataIncomKey = 'data_incom';
@@ -74,17 +72,16 @@ class INCOM_Comments extends INCOM_Frontend {
 		$this->loadPluginInfoInvisible();
 
 		do_action( 'incom_cancel_x_before' );
-		echo apply_filters( 'incom_cancel_x', $this->loadCancelX() );
+		echo wp_kses_post(apply_filters( 'incom_cancel_x', $this->loadCancelX() ));
 		do_action( 'incom_cancel_x_after' );
 
-		echo apply_filters( 'incom_plugin_info', $this->loadPluginInfo() );
-		echo apply_filters( 'incom_comments_list_before', $this->comments_list_before() );
+		echo wp_kses_post(apply_filters( 'incom_comments_list_before', $this->comments_list_before() ));
 
 		$this->loadCommentsList();
 		$this->loadCommentForm();
 
 		do_action( 'incom_cancel_link_before' );
-		echo apply_filters( 'incom_cancel_link', $this->loadCancelLink() );
+		echo wp_kses_post(apply_filters( 'incom_cancel_link', $this->loadCancelLink() ));
 		do_action( 'incom_cancel_link_after' );
 
 		echo '</div>';
@@ -127,7 +124,7 @@ class INCOM_Comments extends INCOM_Frontend {
 		$data_incom = get_comment_meta( $comment->comment_ID, $this->DataIncomKey, true );
 		?>
 		
-		<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>" data-incom-comment="<?php echo $data_incom; ?>" style="display:none">
+		<<?php echo $tag; /* XSS ok */ ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>" data-incom-comment="<?php echo esc_attr($data_incom); ?>" style="display:none">
 		<?php if ( 'div' != $args['style'] ) : ?>
 
 		<div id="incom-div-comment-<?php comment_ID() ?>" class="incom-div-comment comment-body">
@@ -136,7 +133,7 @@ class INCOM_Comments extends INCOM_Frontend {
 			endif;
 
 			if ( (get_option(INCOM_OPTION_KEY."_comment_permalink") == "1") ) {
-				echo apply_filters( 'incom_comment_permalink', $this->loadCommentPermalink( $comment->comment_ID ) );
+				echo wp_kses_post(apply_filters( 'incom_comment_permalink', $this->loadCommentPermalink( $comment->comment_ID ) ));
 			}
 		?>
 
@@ -163,6 +160,7 @@ class INCOM_Comments extends INCOM_Frontend {
 							'depth' => $depth,
 							'max_depth' => $args['max_depth'],
 							'login_text' => '',
+							'reply_title_id' => 'incom-reply-title',
 						)
 					)
 				);
@@ -254,13 +252,6 @@ class INCOM_Comments extends INCOM_Frontend {
 		$commentdata[ $this->DataIncomKey ] = $this->DataIncomValue;
 
 		return $commentdata;
-	}
-
-	/**
-	 * Load plugin info
-	 */
-	private function loadPluginInfo() {
-		return '<a class="incom-info-icon" href="' . $this->loadPluginInfoHref . '" title="' . $this->loadPluginInfoTitle . '" target="_blank">i</a>';
 	}
 
 	/**

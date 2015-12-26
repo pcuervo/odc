@@ -4,7 +4,7 @@ Plugin Name: Inline Comments
 Plugin URI: http://kevinw.de/inline-comments/
 Description: Inline Comments adds your comment system to the side of paragraphs and other sections (like headlines and images) of your post. It performs native with WordPress comments.
 Author: Kevin Weber
-Version: 2.1.2
+Version: 2.1.6.2
 Author URI: http://kevinw.de/
 License: GPL v3
 Text Domain: inline-comments
@@ -12,7 +12,7 @@ Domain Path: /languages/
 */
 
 if ( !defined( 'INCOM_VERSION' ) ) {
-	define( 'INCOM_VERSION', '2.1.2' );
+	define( 'INCOM_VERSION', '2.1.6.2' );
 }
 
 if ( !defined( 'INCOM_VERSION_NAME' ) ) {
@@ -35,9 +35,13 @@ if ( !defined( 'INCOM_FILE' ) ) {
 	define( 'INCOM_FILE', __FILE__ );
 }
 
-if ( !defined( 'INCOM_PATH' ) )
+if ( !defined( 'INCOM_PATH' ) ) {
 	define( 'INCOM_PATH', plugin_dir_path( INCOM_FILE ) );
+}
 
+if ( !defined( 'INCOM_URL' ) ) {
+	define( 'INCOM_URL', plugin_dir_url( __FILE__ ) );
+}
 
 /**
  * Load plugin textdomain.
@@ -55,12 +59,7 @@ define( 'INCOM_NEWS_BUTTON', 'Get contacted' );
 require_once( INCOM_PATH . 'inc/class-register.php' );
 
 function incom_admin_init() {
-	// require_once( INCOM_PATH . 'admin/class-admin.php' );
 	require_once( INCOM_PATH . 'admin/class-admin-options.php' );
-
-	if ( INCOM_ESSENTIAL ) {
-		require_once( INCOM_PATH . 'admin/inc/class-no-premium.php'); 
-	}
 }
 
 function incom_frontend_init() {
@@ -88,4 +87,3 @@ if ( (get_option( INCOM_OPTION_KEY.'_support_for_ajaxify_comments' ) == true) &&
 
 
 /***** Plugin by Kevin Weber || kevinw.de *****/
-?>

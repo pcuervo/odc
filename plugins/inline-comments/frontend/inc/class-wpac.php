@@ -71,6 +71,22 @@
 			  .attr( \'name\', dataIncomKey ).val( $attDataIncomValue );
 			jQuery( idCommentsAndFormHash + \' .form-submit\' ).append( jQuery( input ) );
 
+			// Update count of bubble
+			function isInt(value) {
+			  var x;
+			  if (isNaN(value)) {
+			    return false;
+			  }
+			  x = parseFloat(value);
+			  return (x | 0) === x;
+			}
+
+			var bubble = jQuery( ".incom-bubble-active a" );
+			if (isInt(bubble.text())) {
+				bubble.text( parseInt( bubble.text(), 10 ) + 1 );
+			} else {
+				bubble.text(1);
+			}
 		';
 
 	   return $wpacOptions;

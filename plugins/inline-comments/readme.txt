@@ -5,8 +5,8 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: admin, comment, comments, content, counter, free, integration, jquery, mobile, page, pages, plugin, post, posts, sidebar, wordpress
 Requires at least: 3.5
-Tested up to: 4.2
-Stable tag: 2.1.2
+Tested up to: 4.4
+Stable tag: 2.1.6.1
 
 Inline Comments adds your comment system to the side of paragraphs and other sections (like headlines and images) of your post.
 
@@ -15,7 +15,7 @@ Inline Comments adds your comment system to the side of paragraphs and other sec
 
 It performs native with WordPress comments. The comment area is shown when you click the comment count bubbles (left or right) beside any section.
 
-When publishing a comment next to a paragraph, the comment is published in place without a page reload (using Ajax).
+When publishing a comment next to a paragraph, the comment is published in place without a page reload (using Ajax; requires plugin WP-Ajaxify-Comments). The comment bubbles are not showing up on small screens/mobile sites in many cases.
 
 Demo and more information on the developer’s website: [kevinw.de/inline-comments/](http://kevinw.de/inline-comments/)
 
@@ -51,10 +51,32 @@ For comment system "WordPress Comments", use custom CSS like this:
 
 *.incom-active { background: #f3f3f3; }*
 
+= Why are comments not showing up (even after submitting a new comment was successful)? =
+Make sure that comments on your page/post are working – even when Inline Comments is not activated. When comments are not showing up while this plugin is deactivated, they probably won't show up when Inline Comments is activated.
+
+When you use a theme with the popular Genesis framework, for example, make sure that the theme specific option "Enable Comments" is checked. If you don't want to display comments in the regular comments section (thus, below the post), you can hide that section using CSS. But do not disable commenting at all.
+
 = Known bugs =
 * When you use Jetpack Comments, the comments will not be assigned to a specific paragraph. Anyhow, the comment will be displayed within your regular comment section with all other comments.
 
 == Changelog ==
+
+= 2.1.6.1 =
+* Removed one escape method to make the plugin working again.
+
+= 2.1.6 =
+* Improved security: Excaped content to prevent cross-site scripting (XSS) (pull request from @allan23 on Github).
+
+= 2.1.5 =
+* The "i" link is now optional. By default, no information link is displayed.
+* Fixed not working jQuery tabs in admin backend.
+
+= 2.1.4 =
+* Recalculate bubble positions when window is resized (pull request from @r-a-y on Github).
+* Minor fixes.
+
+= 2.1.3 =
+* Improved compatibility with WP-Ajaxify-Comments: Update comment count bubble when new comment is submitted (pull request from @r-a-y on Github).
 
 = 2.1.2 =
 * Registered additional HTML attribute 'data-incom-ref' to improve theme support for the references feature.
@@ -117,7 +139,7 @@ For comment system "WordPress Comments", use custom CSS like this:
 = 1.0 =
 * Major update! Many improvements and new functionalities
 * This plugin now performs with native WordPress comments
-* Removed option “identifier” (users cannot choose their own identifier anymore)
+* Removed option "identifier" (users cannot choose their own identifier anymore)
 
 = 0.8 =
 * Plugin goes public (Disqus-only)

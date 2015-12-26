@@ -77,4 +77,54 @@ if ( !function_exists( 'axiom_set_theme_names_for_updater' ) ) {
 ------------------------------------------------------------------- */
 
 require_once( get_template_directory().'/fw/loader.php' );
-?>
+
+
+/*
+ * Cuervo functions start here bruh!
+ */
+
+/*------------------------------------*\
+	#CONSTANTS
+\*------------------------------------*/
+
+/**
+* Define paths to javascript, styles, theme and site.
+**/
+define( 'JSPATH', get_template_directory_uri() . '/js/' );
+define( 'THEMEPATH', get_template_directory_uri() . '/' );
+define( 'SITEURL', site_url('/') );
+
+/*------------------------------------*\
+	#INCLUDES
+\*------------------------------------*/
+
+include( 'inc/cuztom/cuztom.php' );
+require_once( 'inc/custom-post-types.php' );
+require_once( 'inc/metaboxes.php' );
+require_once( 'inc/functions-js-footer.php' );
+
+
+
+/*------------------------------------*\
+	#GENERAL FUNCTIONS
+\*------------------------------------*/
+
+add_theme_support('post-thumbnails');
+
+/**
+* Enqueue frontend scripts and styles
+**/
+add_action( 'wp_enqueue_scripts', function(){
+
+	// scripts
+	wp_enqueue_script( 'plugins', JSPATH.'plugins.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'functions', JSPATH.'functions.js', array('plugins'), '1.0', true );
+
+});
+
+
+/**
+* Add javascript to the footer of pages and admin.
+**/
+add_action( 'wp_footer', 'footer_scripts', 21 );
+

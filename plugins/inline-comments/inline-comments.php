@@ -48,7 +48,7 @@ if ( !defined( 'INCOM_URL' ) ) {
  * @since 2.0
  */
 function incom_load_textdomain() {
-  load_plugin_textdomain( 'inline-comments', false, dirname( plugin_basename( INCOM_FILE ) ) . '/languages/' ); 
+  load_plugin_textdomain( 'inline-comments', false, dirname( plugin_basename( INCOM_FILE ) ) . '/languages/' );
 }
 add_action( 'plugins_loaded', INCOM_OPTION_KEY.'_load_textdomain' );
 
@@ -82,7 +82,7 @@ else {
 
 // Feature: Support for WP-Ajaxify-Comments
 if ( (get_option( INCOM_OPTION_KEY.'_support_for_ajaxify_comments' ) == true) && !is_admin() ) {
-	require_once( INCOM_PATH . 'frontend/inc/class-wpac.php'); 
+	require_once( INCOM_PATH . 'frontend/inc/class-wpac.php');
 }
 
 

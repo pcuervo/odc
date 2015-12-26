@@ -49,7 +49,7 @@ If you have created your own language pack, or have an update of an existing one
 Demo and more information on the developer’s website: [kevinw.de/inline-comments/](http://kevinw.de/inline-comments/)
 
 = How can I change the formatting of the commentator’s currently selected section? =
-For comment system "WordPress Comments", use custom CSS like this: 
+For comment system "WordPress Comments", use custom CSS like this:
 
 *.incom-active { background: #f3f3f3; }*
 

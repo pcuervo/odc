@@ -28,9 +28,20 @@
 
 		</div>
 		<aside class="sidebar widget_area bg_tint_light sidebar_style_light [ padding--small ]" role="complementary">
-			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">
-				<span style="font-weight: 400;">Sector</span>
-			</h5>
+			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Workign group</h5>
+			<p>Accountability</p>
+
+			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Language</h5>
+			<p>Español</p>
+
+			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Sector(s)</h5>
+			<p>Agriculture, Education</p>
+
+			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Country</h5>
+			<p>France</p>
+
+			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Type</h5>
+			<p>Graphics, Platform</p>
 		</aside> <!-- /.sidebar -->
 	</div>
 </div>

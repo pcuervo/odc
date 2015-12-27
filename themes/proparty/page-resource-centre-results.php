@@ -40,7 +40,7 @@
 		<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Results</h5>
 		<h6 class="[ no-margin ][ color-intermediate ]"> <small>Order by</small> </h6>
 		<article class="[ posts-sorting ]">
-
+			<!-- @Micho: Hay que cambiar la clase "icon-angle-up-1" del span por "icon-angle-down-1" en el click para que cambie el icono de abajo hacia arriba -->
 			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ]"><span class="[ sc_button_iconed ][ inline-block ]">Date</span> <span class="[ sc_button_iconed icon-angle-up-1 ][ inline-block ]"></span></a>
 			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ]"><span class="[ sc_button_iconed ][ inline-block ]">Name</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
 			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ]"><span class="[ sc_button_iconed ][ inline-block ]">Country</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>

@@ -4,7 +4,7 @@
 
 	<aisde class="[ column-3_12 column sc_column_item ][ resource-centre-results__filters ]">
 
-		<article class="[ article ][ resource-centre__search-wrapper ][ margin-bottom ]">
+		<!-- <article class="[ article ][ resource-centre__search-wrapper ][ margin-bottom ]">
 			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Search</h5>
 			<div class="[ search_wrap search_wrap search_style_regular search_ajax inited search_opened ][ width-100 ]" title="Open/close search form">
 				<div class="[ search_form_wrap ]">
@@ -14,10 +14,10 @@
 					</form>
 				</div>
 			</div>
-		</article>
+		</article> -->
 
 		<article class="[ article ][ resource-centre__filters-wrapper ][ js-filter-container ]">
-			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Categories</h5>
+			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Filter by</h5>
 			<section class="[ resource-centre__filter ][ js-filter ]">
 				<h6 class="[ resource-centre__filter__title ]">Working Groups:</h6>
 				<?php show_filters( 'working_group' ); ?>
@@ -81,9 +81,10 @@
 						</h4>
 						<?php the_post_thumbnail( 'medium', array( 'class' => '[ post__image ][ image-responsive ]' ) ); ?>
 						<p class="[ post__excerpt ]"><?php echo  get_the_excerpt(); ?></p>
-						<p class="[ post__info ]">Working Group: <?php echo get_working_group( $post->ID ); ?></p>
-						<p class="[ post__info ]"><?php echo get_country( $post->ID ); ?></p>
-						<p class="[ post__info ]" ><?php echo get_the_time('U') ?></p>
+						<p class="[ post__info ]">Sector: <?php echo get_sector( $post->ID ); ?></p>
+						<p class="[ post__info post__country ][ hidden ]"><?php echo get_country( $post->ID ); ?></p>
+						<p class="[ post__info post__date ][ hidden ]" ><?php echo get_the_time('U') ?></p>
+						<p class="[ post__info post__author ][ hidden ]" ><?php echo get_the_time('U') ?></p>
 						<?php $date -= 1; ?>
 					</a>
 				</div>

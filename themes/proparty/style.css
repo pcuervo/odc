@@ -4655,3 +4655,8 @@ div#booking_calendar_select_label + .booking_cleardiv {
 @media (min-width: 640px) { .resource-centre-results__section .post{ width: 33.3333% !important; } }
 /*@media (min-width: 768px) { .resource-centre-results__section .post{ width: 25% !important; } }*/
 /*@media (min-width: 1024px) { .resource-centre-results__section .post{ width: 25% !important; } }*/
+
+
+.single-resource .sidebar.widget_area{
+	display: none;
+}

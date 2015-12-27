@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-<div class="page_content_wrap">
 
 	<div class="content_wrap">
 		<div class="content">
@@ -27,8 +26,8 @@
 			</article>
 
 		</div>
-		<aside class="sidebar widget_area bg_tint_light sidebar_style_light [ padding--small ]" role="complementary">
-			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Workign group</h5>
+		<aside class="sidebar bg_tint_light sidebar_style_light [ padding--small ]" role="complementary">
+			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Working group</h5>
 			<p>Accountability</p>
 
 			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Language</h5>
@@ -44,6 +43,5 @@
 			<p>Graphics, Platform</p>
 		</aside> <!-- /.sidebar -->
 	</div>
-</div>
 
 <?php get_footer(); ?>

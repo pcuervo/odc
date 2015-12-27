@@ -192,11 +192,11 @@ $video_bg_show  = axiom_get_custom_option('show_video_bg')=='yes' && (axiom_get_
 
 				<?php
 				// Content and sidebar wrapper
-				if ( is_singular( ! array( 'resource' ) ) ){
+				if ( ! is_singular( array( 'resource' ) ) ){
 					if ($body_style!='fullscreen') axiom_open_wrapper('<div class="content_wrap">');
 				}
 
-				if ( is_singular( ! array( 'resource' ) ) ){
+				if ( ! is_singular( array( 'resource' ) ) ){
 					// Main content wrapper
 					axiom_open_wrapper('<div class="content">');
 				}

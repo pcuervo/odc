@@ -32,11 +32,11 @@ if ( !function_exists( 'axiom_theme_setup' ) ) {
 if ( !function_exists( 'axiom_add_theme_menus' ) ) {
 	//add_filter( 'axiom_action_add_theme_menus', 'axiom_add_theme_menus' );
 	function axiom_add_theme_menus($menus) {
-		
+
 		//For example:
 		//$menus['menu_footer'] = __('Footer Menu', 'axiom');
 		//if (isset($menus['menu_panel'])) unset($menus['menu_panel']);
-		
+
 		if (isset($menus['menu_side'])) unset($menus['menu_side']);
 		return $menus;
 	}
@@ -152,7 +152,7 @@ function show_filters( $taxonomy ){
 	    'hide_empty'             => true,
 	);
 	$filters = get_terms( $taxonomy, $args );
-	if( empty( $filters ) ) return; 
+	if( empty( $filters ) ) return;
 
 	echo '<div class="option-set" data-group="' . $taxonomy . '">';
 	echo '<input type="checkbox" value="" id="' . $taxonomy . '-all" class="all" checked /><label for="' . $taxonomy . '-all">all</label><br />';
@@ -202,7 +202,7 @@ function get_resource_meta_slug( $post_id, $taxonomy ){
  * @return string $working_group
  */
 function get_working_group( $post_id ){
-	
+
 	$terms = wp_get_post_terms( $post_id, 'working_group' );
 
 	if( empty( $terms ) ) return '';
@@ -212,12 +212,27 @@ function get_working_group( $post_id ){
 }// get_working_group
 
 /**
+ * Get Sector of given Resource
+ * @param integer $post_id
+ * @return string $sector
+ */
+function get_sector( $post_id ){
+
+	$terms = wp_get_post_terms( $post_id, 'sector' );
+
+	if( empty( $terms ) ) return '';
+
+	return $terms[0]->name;
+
+}// get_sector
+
+/**
  * Get Country of given Resource
  * @param integer $post_id
  * @return string $country
  */
 function get_country( $post_id ){
-	
+
 	$terms = wp_get_post_terms( $post_id, 'country' );
 
 	if( empty( $terms ) ) return '';

@@ -17,10 +17,9 @@ function runIsotope( container, item ){
             },
             getSortData: {
                 title:      '.post__title',
-                sector:     '.post__sector',
                 date:       '.post__date',
-                country:    '.country'
-
+                country:    '.post__country',
+                author:     '.post__author'
             }
         });
     });
@@ -62,7 +61,7 @@ function getComboFilter( filters ) {
         var filterGroup = filters[ prop ];
         // skip to next filter group if it doesn't have any values
         if ( !filterGroup.length ) continue;
-        
+
         if ( i === 0 ) {
             comboFilters = filterGroup.slice(0);
         } else {

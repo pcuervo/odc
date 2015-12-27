@@ -4469,8 +4469,12 @@ div#booking_calendar_select_label + .booking_cleardiv {
 /* Height */
 
 /* Padding */
+.no-padding{ margin: 0; }
+
+.padding--small{ padding: 10px !important; }
 
 /* Border */
+.no-border{ margin: 0; }
 
 /* Margin */
 .no-margin{ margin: 0; }

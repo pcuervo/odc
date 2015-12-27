@@ -1,25 +1,5 @@
 <?php get_header(); ?>
 
-<!-- <div class="columns_wrap sc_columns sc_columns_count_12 columns_fluid">
-
-	<div class="column-3_12 sc_column_item">
-
-		<h5 class="sc_title sc_title_regular sc_align_center">
-			<span style="font-weight: 400;">1. Open by Default</span>
-		</h5>
-
-	</div>
-
-	<div class="column-9_12 sc_column_item">
-
-		<h5 class="sc_title sc_title_regular sc_align_center">
-			<span style="font-weight: 400;">1. Open by Default</span>
-		</h5>
-
-	</div>
-
-</div> -->
-
 <div class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ margin-bottom--large ]">
 
 	<div class="[ column-6_12 column-centered sc_column_item ]">

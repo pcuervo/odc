@@ -1224,7 +1224,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
 .top_panel_fixed.menu_center .menu_main_wrap .logo {
 	display:none;
 }
-.top_panel_fixed .logo_fixed {display: block;height: 76px;}
+.top_panel_fixed .logo_fixed { display: block; }
 
 .menu_left .menu_main_wrap.logo_center .logo,
 .menu_center .menu_main_wrap.logo_center .logo {

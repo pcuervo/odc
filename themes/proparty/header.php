@@ -48,7 +48,7 @@ $video_bg_show  = axiom_get_custom_option('show_video_bg')=='yes' && (axiom_get_
 		<link rel="icon" type="image/x-icon" href="<?php echo esc_url($favicon); ?>" />
 	    <?php
 	}
-	
+
 	wp_head();
 	?>
 	<!-- Hotjar Tracking Code for opendatacharter.net -->
@@ -90,7 +90,7 @@ $video_bg_show  = axiom_get_custom_option('show_video_bg')=='yes' && (axiom_get_
 	}
 ?>
 
-<body <?php 
+<body <?php
 	body_class('axiom_body body_style_' . esc_attr($body_style)
 		. ' body_' . (axiom_get_custom_option('body_filled')=='yes' ? 'filled' : 'transparent')
 		. ' theme_skin_' . esc_attr($theme_skin)
@@ -164,7 +164,7 @@ $video_bg_show  = axiom_get_custom_option('show_video_bg')=='yes' && (axiom_get_
 				if (empty($header_image2) && file_exists(axiom_get_file_dir('skins/'.($theme_skin).'/images/bg_over.png'))) {
 					$header_image2 = axiom_get_file_url('skins/'.($theme_skin).'/images/bg_over.png');
 				}
-				if ($header_image2!='' || $header_color != '') { 
+				if ($header_image2!='' || $header_color != '') {
 					$header_style = ' style="' . ($header_image2!='' ? 'background-image: url('.esc_url($header_image2).'); background-repeat: repeat-x; background-position: center top;' : '') . ($header_color ? ' background-color:;' : '') . '"';
 				}
 			}
@@ -192,8 +192,13 @@ $video_bg_show  = axiom_get_custom_option('show_video_bg')=='yes' && (axiom_get_
 
 				<?php
 				// Content and sidebar wrapper
-				if ($body_style!='fullscreen') axiom_open_wrapper('<div class="content_wrap">');
-				
-				// Main content wrapper
-				axiom_open_wrapper('<div class="content">');
+				if ( is_singular( ! array( 'resource' ) ) ){
+					if ($body_style!='fullscreen') axiom_open_wrapper('<div class="content_wrap">');
+				}
+
+				if ( is_singular( ! array( 'resource' ) ) ){
+					// Main content wrapper
+					axiom_open_wrapper('<div class="content">');
+				}
+
 				?>

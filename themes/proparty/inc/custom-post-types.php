@@ -10,15 +10,15 @@ add_action('init', function(){
 	$resource_pt = register_cuztom_post_type( 'Resource' );
 	// Add taxonomies
 	$resource_pt->add_taxonomy( 'Language' );
-	//insert_language_taxonomy_terms();
+	insert_language_taxonomy_terms();
 	$resource_pt->add_taxonomy( 'Sector' );
-	//insert_implementing_partner_taxonomy_terms();
+	//insert_resource_type_taxonomy_terms();
 	$resource_pt->add_taxonomy( 'Country' );	
-	//insert_focus_area_impact_taxonomy_terms();
+	insert_country_taxonomy_terms();
 	$resource_pt->add_taxonomy( 'Resource Type' );	
-	//insert_sector_taxonomy_terms();
+	insert_resource_type_taxonomy_terms();
 	$resource_pt->add_taxonomy( 'Working Group' );	
-	//insert_publication_type_taxonomy_terms();
+	insert_working_group_taxonomy_terms();
 
 });
 
@@ -26,12 +26,12 @@ add_action('init', function(){
  * Insert region taxonomy terms
  */
 function insert_language_taxonomy_terms(){
-	$regions = array( 'Global Initiatives', 'Africa', 'Asia', 'Eastern Europe & Central Asia', 'Caribbean', 'Latin America' );
-	foreach ( $regions as $region ) {
-		$term = term_exists( $region, 'region' );
+	$languages = array( 'English', 'Español' );
+	foreach ( $languages as $language ) {
+		$term = term_exists( $language, 'language' );
 		if ( FALSE !== $term && NULL !== $term ) continue;
 
-		wp_insert_term( $region, 'region' );
+		wp_insert_term( $language, 'language' );
 	}
 }// insert_language_taxonomy_terms
 
@@ -51,41 +51,41 @@ function insert_implementing_partner_taxonomy_terms(){
 /*
  * Insert region taxonomy terms
  */
-function insert_focus_area_impact_taxonomy_terms(){
-	$areas = array( 'Standards', 'Capacity building', 'Research', 'Innovation', 'Policy' );
-	foreach ( $areas as $area ) {
-		$term = term_exists( $area, 'focus_areas_of_impact' );
+function insert_country_taxonomy_terms(){
+	$country = array( 'Mexico', 'Canada', 'USA' );
+	foreach ( $country as $area ) {
+		$term = term_exists( $area, 'country' );
 		if ( FALSE !== $term && NULL !== $term ) continue;
 
-		wp_insert_term( $area, 'focus_areas_of_impact' );
+		wp_insert_term( $area, 'country' );
 	}
-}// insert_focus_area_impact_taxonomy_terms
+}// insert_country_taxonomy_terms
 
 /*
  * Insert sector taxonomy terms
  */
-function insert_sector_taxonomy_terms(){
-	$sectors = array( 'Statistics', 'Agriculture', 'Cities', 'Health', 'Governance' );
-	foreach ( $sectors as $sector ) {
-		$term = term_exists( $sector, 'sector' );
+function insert_resource_type_taxonomy_terms(){
+	$resource_types = array( 'Datasets', 'Platforms' );
+	foreach ( $resource_types as $resource_type ) {
+		$term = term_exists( $resource_type, 'resource_type' );
 		if ( FALSE !== $term && NULL !== $term ) continue;
 
-		wp_insert_term( $sector, 'sector' );
+		wp_insert_term( $resource_type, 'resource_type' );
 	}
-}// insert_sector_taxonomy_terms
+}// insert_resource_type_taxonomy_terms
 
 /*
  * Insert sector taxonomy terms
  */
-function insert_publication_type_taxonomy_terms(){
-	// $sectors = array( 'Statistics', 'Agriculture', 'Cities', 'Health', 'Governance' );
-	// foreach ( $sectors as $sector ) {
-	// 	$term = term_exists( $sector, 'sector' );
-	// 	if ( FALSE !== $term && NULL !== $term ) continue;
+function insert_working_group_taxonomy_terms(){
+	$groups = array( 'Implementation', 'Technical', 'Subnational Governments', 'Private Sector', 'Accountability', 'Incentive Mechanisms' );
+	foreach ( $groups as $group ) {
+		$term = term_exists( $group, 'working_group' );
+		if ( FALSE !== $term && NULL !== $term ) continue;
 
-	// 	wp_insert_term( $sector, 'sector' );
-	// }
-}// insert_publication_type_taxonomy_terms
+		wp_insert_term( $group, 'working_group' );
+	}
+}// insert_working_group_taxonomy_terms
 
 
 

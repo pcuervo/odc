@@ -9,17 +9,13 @@ add_action('add_meta_boxes', function(){
 
 	switch ( $post->post_type ) {
 		case 'result':
-			add_meta_box( 'abstract', 'Abstract', 'metabox_abstract', 'result', 'advanced', 'high' );
-			add_meta_box( 'context', 'Context', 'metabox_context', 'result', 'advanced', 'high' );
-			add_meta_box( 'year_of_publication', 'Year of Publication', 'metabox_year_of_publication', 'result', 'advanced', 'high' );
-			add_meta_box( 'authors', 'Authors', 'metabox_authors', 'result', 'advanced', 'high' );
-			add_meta_box( 'institution', 'Institution', 'metabox_institution', 'result', 'advanced', 'high' );
-			add_meta_box( 'city', 'City', 'metabox_city', 'result', 'advanced', 'high' );
-			add_meta_box( 'url', 'URL', 'metabox_url', 'result', 'advanced', 'high' );
-		case 'implementing_partner':
-			add_meta_box( 'official_website', 'Official Website Url', 'metabox_official_website', 'implementing_partner', 'advanced', 'high' );
-			add_meta_box( 'rss_link', 'RSS Link', 'metabox_rss_link', 'implementing_partner', 'advanced', 'high' );
-			add_meta_box( 'twitter_username', 'Twitter Username', 'metabox_twitter_username', 'implementing_partner', 'advanced', 'high' );
+			// add_meta_box( 'abstract', 'Abstract', 'metabox_abstract', 'result', 'advanced', 'high' );
+			// add_meta_box( 'context', 'Context', 'metabox_context', 'result', 'advanced', 'high' );
+			// add_meta_box( 'year_of_publication', 'Year of Publication', 'metabox_year_of_publication', 'result', 'advanced', 'high' );
+			// add_meta_box( 'authors', 'Authors', 'metabox_authors', 'result', 'advanced', 'high' );
+			// add_meta_box( 'institution', 'Institution', 'metabox_institution', 'result', 'advanced', 'high' );
+			// add_meta_box( 'city', 'City', 'metabox_city', 'result', 'advanced', 'high' );
+			// add_meta_box( 'url', 'URL', 'metabox_url', 'result', 'advanced', 'high' );
 		default:
 			
 	}

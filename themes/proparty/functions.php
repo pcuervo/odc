@@ -122,9 +122,107 @@ add_action( 'wp_enqueue_scripts', function(){
 
 });
 
-
 /**
 * Add javascript to the footer of pages and admin.
 **/
 add_action( 'wp_footer', 'footer_scripts', 21 );
+
+/**
+* Make excerpt shorter
+**/
+function wp_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wp_excerpt_length', 999 );
+
+
+
+/*------------------------------------*\
+	#GENERAL FUNCTIONS
+\*------------------------------------*/
+
+/**
+ * Show filters
+ * @param $taxonomy
+*/
+function show_filters( $taxonomy ){
+
+	$args = array(
+	    'orderby'                => 'name',
+	    'hide_empty'             => true,
+	);
+	$filters = get_terms( $taxonomy, $args );
+	if( empty( $filters ) ) return; 
+
+	echo '<div class="option-set" data-group="' . $taxonomy . '">';
+	echo '<input type="checkbox" value="" id="' . $taxonomy . '-all" class="all" checked /><label for="' . $taxonomy . '-all">all</label><br />';
+	foreach ( $filters as $filter ) {
+		echo '<input type="checkbox" value=".' . $filter->slug . '" id="' . $filter->slug . '" /><label for="' . $filter->slug . '">' . $filter->name . '</label><br />';
+	}
+	echo '</div>';
+}
+
+
+
+/*------------------------------------*\
+	#SET/GET FUNCTIONS
+\*------------------------------------*/
+
+/**
+ * Get resource info for filters.
+ * @param integer $post_id
+ * @return mixed $resource_info
+ */
+function get_resource_info( $post_id ){
+
+	$resource_info = array(
+		'language'				=> get_resource_meta_slug( $post_id, 'language' ),
+		'country'				=> get_resource_meta_slug( $post_id, 'country' ),
+		'sector'				=> get_resource_meta_slug( $post_id, 'sector' ),
+		'working_group'			=> get_resource_meta_slug( $post_id, 'working_group' ),
+		);
+	return $resource_info;
+}// get_resource_info
+
+/**
+ * Get region slug for a given result.
+ * @param integer $post_id
+ * @param string $taxonomy
+ * @return string $slug
+ */
+function get_resource_meta_slug( $post_id, $taxonomy ){
+	$term = wp_get_post_terms( $post_id, $taxonomy );
+	$slug = empty( $term ) ? '' : $term[0]->slug;
+	return $slug;
+}// get_resource_meta_slug
+
+/**
+ * Get Working Group of given Resource
+ * @param integer $post_id
+ * @return string $working_group
+ */
+function get_working_group( $post_id ){
+	
+	$terms = wp_get_post_terms( $post_id, 'working_group' );
+
+	if( empty( $terms ) ) return '';
+
+	return $terms[0]->name;
+
+}// get_working_group
+
+/**
+ * Get Country of given Resource
+ * @param integer $post_id
+ * @return string $country
+ */
+function get_country( $post_id ){
+	
+	$terms = wp_get_post_terms( $post_id, 'country' );
+
+	if( empty( $terms ) ) return '';
+
+	return $terms[0]->name;
+
+}// get_country
 

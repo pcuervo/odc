@@ -12,10 +12,23 @@ function footer_scripts(){
 		<script type="text/javascript">
 			$( document ).ready(function() {
 
-				<?php if( is_archive( 'results' ) ) : ?>
-					runIsotope('.js-filter-container', '.js-filter');
-					runIsotope('.isotope-container', '.post');
-					filterIsotope('.isotope-container', '.post');
+				<?php if( is_page( 'resource-centre-results' ) ) : ?>
+
+					initCheckBoxFilters();
+					$('.js-sort').click( function(e){
+						e.preventDefault();
+						var data = $(this).data('sort');
+						var asc = parseInt( $(this).data('asc') );
+						if( asc ){
+							$(this).data('asc', 0);
+						} else {
+							$(this).data('asc', 1);
+						}
+						$('.posts-container').isotope({ 
+							sortBy : data,
+							sortAscending : asc
+						});
+					})
 				<?php endif; ?>
 
 				<?php if( is_page( 'network' ) ) : ?>

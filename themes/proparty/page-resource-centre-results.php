@@ -37,6 +37,13 @@
 
 	<section class="[ column-9_12 column sc_column_item ][ resource-centre-results__section ]">
 
+		<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Working groups</h5>
+		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][ active ]">Implementation</a>
+		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][  ]">Technical</a>
+		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][  ]">Subnational Governments</a>
+		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][  ]">Private Sector</a>
+		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][  ]">Accountability</a>
+		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][  ]">Incentive Mechanisms</a>
 
 		<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Results</h5>
 		<h6 class="[ no-margin ][ color-intermediate ]"> <small>Order by</small> </h6>
@@ -73,10 +80,10 @@
 							<?php echo get_the_title() ?>
 						</h4>
 						<?php the_post_thumbnail( 'medium', array( 'class' => '[ post__image ][ image-responsive ]' ) ); ?>
-						<p class="[ post__excerpt ]"><?php the_excerpt(); ?></p>
-						<p class="[ post__sector ]">Working Group: <?php echo get_working_group( $post->ID ); ?></p>
-						<p class="[ country ]">Country: <?php echo get_country( $post->ID ); ?></p>
-						<p class="[ post__date ]" ><?php echo get_the_time('U') ?></p>
+						<p class="[ post__excerpt ]"><?php echo  get_the_excerpt(); ?></p>
+						<p class="[ post__info ]">Working Group: <?php echo get_working_group( $post->ID ); ?></p>
+						<p class="[ post__info ]"><?php echo get_country( $post->ID ); ?></p>
+						<p class="[ post__info ]" ><?php echo get_the_time('U') ?></p>
 						<?php $date -= 1; ?>
 					</a>
 				</div>

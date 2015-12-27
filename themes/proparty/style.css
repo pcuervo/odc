@@ -4489,6 +4489,14 @@ div#booking_calendar_select_label + .booking_cleardiv {
 }
 
 /**
+ * Displays
+**/
+
+.block{ display: block !important; }
+.inline{ display: inline !important; }
+.inline-block{ display: inline-block !important; }
+
+/**
  * Positions
 **/
 
@@ -4502,6 +4510,14 @@ div#booking_calendar_select_label + .booking_cleardiv {
 	width: 100%; height: auto;
 }
 
+/**
+ * Colors
+**/
+
+.color-light{ color: #fff !important; }
+.color-primary{ color: #3598db !important; }
+.color-dark{ color: #363842 !important; }
+.color-intermediate{ color: #616161 !important; }
 
 
 
@@ -4509,6 +4525,19 @@ div#booking_calendar_select_label + .booking_cleardiv {
 /*------------------------------------*\
     #Specific elements
 \*------------------------------------*/
+
+/**
+ * Buttons
+**/
+.sc_button_size_mini{
+	padding: 5px 10px !important;
+	text-transform: initial !important;
+	letter-spacing: 0 !important;
+}
+
+.sc_button_size_mini span:before{
+	margin: 0 0 0 5px !important;
+}
 
 /**
  * Search
@@ -4571,4 +4600,14 @@ div#booking_calendar_select_label + .booking_cleardiv {
 .post__sector{
 	margin-bottom: 0;
 	font: 300 14px/18px "Montserrat";
+}
+
+/**
+ * Filter
+**/
+
+.resource-centre__filter__title{
+	margin-bottom: 0;
+	font: 600 14px/18px "Montserrat";
+	color: #3598db;
 }

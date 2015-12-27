@@ -38,16 +38,55 @@
 
 
 		<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Results</h5>
-		<h6>Order by</h6>
+		<h6 class="[ no-margin ][ color-intermediate ]"> <small>Order by</small> </h6>
 		<article class="[ posts-sorting ]">
 
-			<a href="#" class="sc_button sc_button_square sc_button_style_filled sc_button_bg_user sc_button_size_mini alignleft" style="margin-top:0.5em;margin-right:0px;margin-bottom:0.5em;margin-left:30px;"><span class="sc_button_iconed inherit">READ MORE</span></a>
+			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ]"><span class="[ sc_button_iconed ][ inline-block ]">Date</span> <span class="[ sc_button_iconed icon-angle-up-1 ][ inline-block ]"></span></a>
+			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ]"><span class="[ sc_button_iconed ][ inline-block ]">Name</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
+			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ]"><span class="[ sc_button_iconed ][ inline-block ]">Country</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
+			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ]"><span class="[ sc_button_iconed ][ inline-block ]">Author</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
 
 		</article>
 
 		<div class="clear"></div>
 
 		<article class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ posts-container ]">
+
+			<div class="[ column-4_12 sc_column_item ][ post ]">
+				<a class="[ post__card ]">
+					<h4 class="[ post__title ]"> This is a test</h4>
+					<img src="http://pcuervo.com/od4d/wp-content/uploads/2015/12/MSF-Yann-Libessart-Ebola-trial-Conakry-Guinea-300x141.jpg" class="[ post__image ][ image-responsive ]" alt="IDRC welcomes early Ebola&nbsp;vaccine trial results">
+					<p class="[ post__excerpt ]">I am enim adesse poterit hoc non est positum in nostra actione duo reges constructio interrete minime vero inquit</p>
+					<p class="[ post__sector ]">Policies</p>
+				</a>
+			</div>
+
+			<div class="[ column-4_12 sc_column_item ][ post ]">
+				<a class="[ post__card ]">
+					<h4 class="[ post__title ]"> This is a test</h4>
+					<img src="http://pcuervo.com/od4d/wp-content/uploads/2015/12/MSF-Yann-Libessart-Ebola-trial-Conakry-Guinea-300x141.jpg" class="[ post__image ][ image-responsive ]" alt="IDRC welcomes early Ebola&nbsp;vaccine trial results">
+					<p class="[ post__excerpt ]">I am enim adesse poterit hoc non est positum in nostra actione duo reges constructio interrete minime vero inquit</p>
+					<p class="[ post__sector ]">Policies</p>
+				</a>
+			</div>
+
+			<div class="[ column-4_12 sc_column_item ][ post ]">
+				<a class="[ post__card ]">
+					<h4 class="[ post__title ]"> This is a test</h4>
+					<img src="http://pcuervo.com/od4d/wp-content/uploads/2015/12/MSF-Yann-Libessart-Ebola-trial-Conakry-Guinea-300x141.jpg" class="[ post__image ][ image-responsive ]" alt="IDRC welcomes early Ebola&nbsp;vaccine trial results">
+					<p class="[ post__excerpt ]">I am enim adesse poterit hoc non est positum in nostra actione duo reges constructio interrete minime vero inquit</p>
+					<p class="[ post__sector ]">Policies</p>
+				</a>
+			</div>
+
+			<div class="[ column-4_12 sc_column_item ][ post ]">
+				<a class="[ post__card ]">
+					<h4 class="[ post__title ]"> This is a test</h4>
+					<img src="http://pcuervo.com/od4d/wp-content/uploads/2015/12/MSF-Yann-Libessart-Ebola-trial-Conakry-Guinea-300x141.jpg" class="[ post__image ][ image-responsive ]" alt="IDRC welcomes early Ebola&nbsp;vaccine trial results">
+					<p class="[ post__excerpt ]">I am enim adesse poterit hoc non est positum in nostra actione duo reges constructio interrete minime vero inquit</p>
+					<p class="[ post__sector ]">Policies</p>
+				</a>
+			</div>
 
 			<div class="[ column-4_12 sc_column_item ][ post ]">
 				<a class="[ post__card ]">

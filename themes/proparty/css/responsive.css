@@ -4,7 +4,7 @@
 -------------------------------------------------------------- */
 
 /*
-Apple iPhone 5, 5S & 5C 
+Apple iPhone 5, 5S & 5C
 Apple iPod Touch (5th generation)
 */
 @media (min-width: 1136px) and (max-width: 1279px) {
@@ -16,13 +16,13 @@ Apple iPod Touch (5th generation)
 	/* Content and Sidebar */
 	.sidebar_show .content { width: 700px; }
 	.sidebar { 				 width: 250px; }
-	
+
 	/* Fullwide or Fullscreen with sidebar */
 	.body_style_fullwide.sidebar_right .content, .body_style_fullscreen.sidebar_right .content { padding-right: 300px; }
 	.body_style_fullwide.sidebar_right .sidebar, .body_style_fullscreen.sidebar_right .sidebar { margin-left: -250px; }
 	.body_style_fullwide.sidebar_left  .content, .body_style_fullscreen.sidebar_left  .content { padding-left:  300px; }
 	.body_style_fullwide.sidebar_left  .sidebar, .body_style_fullscreen.sidebar_left  .sidebar { margin-right:-250px; }
-	
+
 	/* Menu area */
 	.menu_main_wrap .search_wrap {margin-top: 2em;}
 
@@ -54,7 +54,7 @@ Apple iPod Touch (4th generation)
 	/* Content and Sidebar */
 	.sidebar_show .content { width: 600px; }
 	.sidebar { 				 width: 220px; }
-	
+
 	/* Fullwide or Fullscreen with sidebar */
 	.body_style_fullwide.sidebar_right .content, .body_style_fullscreen.sidebar_right .content { padding-right: 250px; }
 	.body_style_fullwide.sidebar_right .sidebar, .body_style_fullscreen.sidebar_right .sidebar { margin-left: -220px; }
@@ -105,13 +105,13 @@ Apple iPod Touch (4th generation)
 		padding-right:30px;
 		padding-bottom:30px;
 	}
-	
+
 
 	/* Menu area */
 	.menu_right .menu_main_wrap.search_opened .menu_main_nav_area {
 		display:none;
 	}
-	
+
 	/* Widgets */
 	.widget_area .sc_tabs.sc_tabs_style_2 .sc_tabs_titles li + li {
 		margin-left:0.4em;
@@ -123,7 +123,7 @@ Apple iPod Touch (4th generation)
 		padding:6px 3px;
 	}
 
-	
+
 	/* Woocommerce */
 	.woocommerce ul.products, .woocommerce-page ul.products {
 		margin-right:-30px;
@@ -170,11 +170,11 @@ Samsung Galaxy
 	/* Content and Sidebar */
 	.sidebar_show .content { width: 100%; float: none; }
 	.sidebar { 				 width: 100%; float:none; }
-	
+
 	.article_style_boxed .sidebar {
 		margin-top:20px;
 	}
-	
+
 	.sidebar aside {
 		display: inline-block;
 		vertical-align:top;
@@ -196,7 +196,7 @@ Samsung Galaxy
 		border-top:1px solid #f4f7f9;
 		margin-top:20px;
 	}
-	
+
 	/* Fullwide or Fullscreen with sidebar */
 	.body_style_fullwide.sidebar_right .content, .body_style_fullscreen.sidebar_right .content { padding-right: 0; }
 	.body_style_fullwide.sidebar_right .sidebar, .body_style_fullscreen.sidebar_right .sidebar { margin-left: 0; }
@@ -252,7 +252,7 @@ Samsung Galaxy
 	.gallery.gallery-columns-8 .gallery-item {	width: 20% !important; }
 	.gallery.gallery-columns-7 .gallery-item {	width: 20% !important; }
 	.gallery.gallery-columns-6 .gallery-item {	width: 20% !important; }
-	
+
 
 	/* Widgets */
 	.widget_area .sc_tabs.sc_tabs_style_2 .sc_tabs_titles li + li {
@@ -261,7 +261,7 @@ Samsung Galaxy
 	.widget_area .sc_tabs.sc_tabs_style_2 .sc_tabs_titles li a {
 		padding: 2px 0.5em;
 	}
-	
+
 	/* Woocommerce */
 	.woocommerce ul.products, .woocommerce-page ul.products {
 		margin-right:-20px;
@@ -312,17 +312,17 @@ Samsung Galaxy
 @media (min-width: 480px) and (max-width: 799px) {
 
 	/* Body sizes */
-	.body_style_boxed .page_wrap {		width:450px; }
-	.slider_boxed, .content_wrap, .content_container {	width:420px; }
+	.body_style_boxed .page_wrap { width:450px; }
+	.slider_boxed, .content_wrap, .content_container { width: 90%; }
 
 	/* Content and Sidebar */
 	.sidebar_show .content { width: 100%; float: none; }
 	.sidebar { 				 width: 100%; float:none; }
-	
+
 	.article_style_boxed .sidebar {
 		margin-top:20px;
 	}
-	
+
 	.widget_area aside {
 		display: inline-block;
 		float:none;
@@ -346,7 +346,7 @@ Samsung Galaxy
 		padding-top:10px;
 		margin-top:10px;
 	}
-	
+
 	/* Fullwide or Fullscreen with sidebar */
 	.body_style_fullwide.sidebar_right .content, .body_style_fullscreen.sidebar_right .content { padding-right: 0; }
 	.body_style_fullwide.sidebar_right .sidebar, .body_style_fullscreen.sidebar_right .sidebar { margin-left: 0; }
@@ -428,7 +428,7 @@ Samsung Galaxy
 	.row:not(.columns_fluid) > [class*="column-"]:nth-child(2n+4), .columns_wrap:not(.columns_fluid) > [class*="column-"]:nth-child(2n+4) {
 		padding-top: 20px;
 	}
-	
+
 	.woocommerce.columns-3 ul.products li.product, .woocommerce-page.columns-3 ul.products li.product,
 	.woocommerce ul.products li.product.column-1_3, .woocommerce-page ul.products li.product.column-1_3,
 	.woocommerce.columns-4 ul.products li.product, .woocommerce-page.columns-4 ul.products li.product,
@@ -460,7 +460,7 @@ Samsung Galaxy
 	.gallery.gallery-columns-6 .gallery-item {	width: 33.3333% !important; }
 	.gallery.gallery-columns-5 .gallery-item {	width: 33.3333% !important; }
 	.gallery.gallery-columns-4 .gallery-item {	width: 33.3333% !important; }
-	
+
 
 	/* Menu area */
 	.admin-bar.top_panel_over .top_panel_wrap {	top:46px; }
@@ -491,7 +491,7 @@ Samsung Galaxy
 	.menu_user_wrap .menu_user_nav > li > ul {
 		top: 21px;
 	}
-	
+
 	.page_top_wrap .breadcrumbs {
 		float:none;
 	}
@@ -520,19 +520,19 @@ Samsung Galaxy
 	.ih-item.square.effect1.bottom_to_top .info .post_title {
 		margin-top:35% !important;
 	}
-	
+
 	.ih-item.square.effect_dir .info .post_title {
 		margin-top:4% !important;
 	}
-	
+
 	.comments_list_wrap ul ul ul {
 		/* padding-left:0; */
 		margin-left:0;
 	}
-	
+
 	/* Reviews block */
 	.reviews_block {
-		width:100%; 
+		width:100%;
 	}
 	.content .reviews_block {
 		float:none;
@@ -552,7 +552,7 @@ Samsung Galaxy
 	.widget_area .sc_tabs.sc_tabs_style_2 .sc_tabs_titles li a {
 		padding: 2px 0.5em;
 	}
-	
+
 
 	/* Woocommerce */
 	.woocommerce-shipping-fields {
@@ -580,8 +580,8 @@ Samsung Galaxy
 	.woocommerce table.cart td, .woocommerce #content table.cart td, .woocommerce-page table.cart td, .woocommerce-page #content table.cart td {
 		padding: 6px;
 	}
-	
-	
+
+
 	/* Shortcodes */
 	.sc_accordion.sc_accordion_style_2 .sc_accordion_item .sc_accordion_title .sc_accordion_icon {
 		border-width: 1px;
@@ -1214,17 +1214,17 @@ Very common low res
 @media (max-width: 479px) {
 
 	/* Body sizes */
-	.body_style_boxed .page_wrap {		width:300px; }
-	.slider_boxed, .content_wrap, .content_container {	width:280px; }
+	.body_style_boxed .page_wrap { width:300px; }
+	.slider_boxed, .content_wrap, .content_container { width: 80%; }
 
 	/* Content and Sidebar */
 	.sidebar_show .content { width: 100%; float: none; }
 	.sidebar { 				 width: 100%; float:none; }
-	
+
 	.article_style_boxed .sidebar {
 		margin-top:10px;
 	}
-	
+
 	.widget_area aside {
 		display: block;
 		float:none;
@@ -1235,7 +1235,7 @@ Very common low res
 		padding-top:10px;
 		margin-top:10px;
 	}
-	
+
 	/* Fullwide or Fullscreen with sidebar */
 	.body_style_fullwide.sidebar_right .content, .body_style_fullscreen.sidebar_right .content { padding-right: 0; }
 	.body_style_fullwide.sidebar_right .sidebar, .body_style_fullscreen.sidebar_right .sidebar { margin-left: 0; }
@@ -1329,7 +1329,7 @@ Very common low res
 	.gallery.gallery-columns-5 .gallery-item {	width: 50% !important; }
 	.gallery.gallery-columns-4 .gallery-item {	width: 50% !important; }
 	.gallery.gallery-columns-3 .gallery-item {	width: 50% !important; }
-	
+
 	.woocommerce[class*="column-"] ul.products li.product, .woocommerce-page[class*="column-"] ul.products li.product,
 	.woocommerce ul.products li.product[class*="column-"], .woocommerce-page ul.products li.product[class*="column-"],
 	.woocommerce .related ul li.product, .woocommerce .related ul.products li.product, .woocommerce .upsells.products ul li.product,
@@ -1361,7 +1361,7 @@ Very common low res
 	.menu_user_wrap .menu_user_nav > li.menu_user_bookmarks {
 		margin-left:0.5em;
 	}
-	
+
 	.menu_main_wrap .logo {
 		max-width:50%;
 	}
@@ -1397,22 +1397,22 @@ Very common low res
 	.isotope_wrap .isotope_item {
 		width:100% !important;
 	}
-	
+
 	.comments_list_wrap ul ul ul {
 		/* padding-left:0; */
 		margin-left:0;
 	}
-	
+
 	/* Reviews block */
 	.reviews_block {
-		width:100%; 
+		width:100%;
 	}
 	.content .reviews_block {
 		float:none;
 		margin-left:0;
 	}
-	
-	
+
+
 	/* Widgets */
 	td, th {
 		padding:2px;
@@ -1426,7 +1426,7 @@ Very common low res
 	.widget_area .sc_tabs.sc_tabs_style_2 .sc_tabs_titles li a {
 		padding: 2px 0.5em;
 	}
-	
+
 
 	/* Woocommerce */
 	.woocommerce-shipping-fields {
@@ -1457,7 +1457,7 @@ Very common low res
 	.woocommerce table.cart td, .woocommerce #content table.cart td, .woocommerce-page table.cart td, .woocommerce-page #content table.cart td {
 		padding: 4px;
 	}
-	
+
 	/* Shortcodes */
 	.sc_accordion.sc_accordion_style_2 .sc_accordion_item .sc_accordion_title .sc_accordion_icon {
 		border-width: 1px;
@@ -1670,6 +1670,12 @@ Very common low res
 	.sc_countdown.sc_countdown_style_1 .sc_countdown_label {font-size: 9px}
 
 }
+
+@media (max-width: 420px) {
+
+	.row.columns_fluid > [class*="column-"], .columns_wrap.columns_fluid > [class*="column-"] {
+		width: 100%;
+	}
 
 @media (max-width: 320px) {
 	/* Revolution Slider */

@@ -4,7 +4,7 @@ Plugin Name: Booking Calendar WP Plugin
 Description: Accessible WordPress booking calendar plugin.
 Author: Wachipi Srl
 Author URI: http://www.wachipi.com
-Version: 4.1.2
+Version: 4.1.4
 */
 
 include(dirname(__FILE__).'/wp-booking-calendar-install.php' );
@@ -318,7 +318,7 @@ function booking_calendar_public_scripts() {
 	wp_enqueue_script('wp-booking-calendar-public-tmt_core-js',plugins_url('wp-booking-calendar/public/js/tmt_libs/tmt_core.js'));
 	wp_enqueue_script('wp-booking-calendar-public-tmt_form-js',plugins_url('wp-booking-calendar/public/js/tmt_libs/tmt_form.js'));
 	wp_enqueue_script('wp-booking-calendar-public-tmt_validator-js',plugins_url('wp-booking-calendar/public/js/tmt_libs/tmt_validator.js'));
-	wp_enqueue_script('wp-booking-calendar-public-lib-js',plugins_url('wp-booking-calendar/public/js/lib.js'));
+	wp_enqueue_script('wp-booking-calendar-public-lib-js',plugins_url('wp-booking-calendar/public/js/lib.js'),array('jquery'));
 	wp_enqueue_script('wp-booking-calendar-public-calendar_js',plugins_url('wp-booking-calendar/public/js/wach.calendar.js'),array('jquery'));
 	
 	wp_localize_script( 'wp-booking-calendar-public-calendar_js', 'WPBookingCalendarSettings', array(

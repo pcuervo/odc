@@ -4586,11 +4586,11 @@ div#booking_calendar_select_label + .booking_cleardiv {
 	margin: 10px 0;
 }
 
-@media (min-width: 320px) { .post{ width: 100%; } }
-@media (min-width: 480px) { .post{ width: 50%; } }
-@media (min-width: 640px) { .post{ width: 33.3333%; } }
-/*@media (min-width: 768px) { .post{ width: 25%; } }*/
-@media (min-width: 1024px) { .post{ width: 25%; } }
+@media (min-width: 320px) { .posts-container .post{ width: 100%; } }
+@media (min-width: 480px) { .posts-container .post{ width: 50%; } }
+@media (min-width: 640px) { .posts-container .post{ width: 33.3333%; } }
+/*@media (min-width: 768px) { .posts-container .post{ width: 25%; } }*/
+@media (min-width: 1024px) { .posts-container .post{ width: 25%; } }
 
 .post__card{
 	display: block;

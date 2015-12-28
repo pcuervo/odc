@@ -147,6 +147,11 @@ add_filter( 'excerpt_length', 'wp_excerpt_length', 999 );
 */
 function show_filters( $taxonomy ){
 
+	if( 'working-group' == $taxonomy){
+		show_filters_working_groups();
+		return;
+	}
+
 	$args = array(
 	    'orderby'                => 'name',
 	    'hide_empty'             => true,
@@ -159,6 +164,28 @@ function show_filters( $taxonomy ){
 	foreach ( $filters as $filter ) {
 		echo '<input type="checkbox" value=".' . $filter->slug . '" id="' . $filter->slug . '" /><label for="' . $filter->slug . '">' . $filter->name . '</label><br />';
 	}
+	echo '</div>';
+}
+
+/**
+ * Show filters
+ * @param $taxonomy
+*/
+function show_filters_working_groups(){
+
+	$args = array(
+	    'orderby'                => 'name',
+	    'hide_empty'             => true,
+	);
+	$filters = get_terms( 'working_group', $args );
+	if( empty( $filters ) ) return;
+
+	echo '<div class="[ button-group ]" data-filter-group="working_group">';
+
+	echo '<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ]" data-filter="">All</a>';
+	foreach ( $filters as $filter ) 
+		echo '<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ]" data-filter=".' . $filter->slug . '">' . $filter->name . '</a>';
+
 	echo '</div>';
 }
 
@@ -240,4 +267,34 @@ function get_country( $post_id ){
 	return $terms[0]->name;
 
 }// get_country
+
+/**
+ * Get Language of given Resource
+ * @param integer $post_id
+ * @return string $language
+ */
+function get_language( $post_id ){
+
+	$terms = wp_get_post_terms( $post_id, 'language' );
+
+	if( empty( $terms ) ) return '';
+
+	return $terms[0]->name;
+
+}// get_language
+
+/**
+ * Get Language of given Resource
+ * @param integer $post_id
+ * @return string $res_type
+ */
+function get_res_type( $post_id ){
+
+	$terms = wp_get_post_terms( $post_id, 'resource_type' );
+
+	if( empty( $terms ) ) return '';
+
+	return $terms[0]->name;
+
+}// get_res_type
 

@@ -6,7 +6,7 @@ var $=jQuery.noConflict();
  * @item element inside the container
 **/
 function runIsotope( container, item ){
-    console.log('running isotope');
+
     var $container = $(container);
     $container.imagesLoaded( function(){
         $container.isotope({
@@ -24,6 +24,41 @@ function runIsotope( container, item ){
         });
     });
 }// runIsotope
+
+
+/**
+ * Filters with Isotope for Working Groups
+ * @container element cointaining items
+**/
+function initWorkingGroupFilters( ){
+    var $container = $('.posts-container');
+
+    // store filter for each group
+    var filters = {};
+
+    $('.wg-filters').on( 'click', 'a', function() {
+        var $this = $(this);
+        // get group key
+        var $buttonGroup = $this.parents('.button-group');
+        var filterGroup = $buttonGroup.attr('data-filter-group');
+        // set filter for group
+        filters[ filterGroup ] = $this.attr('data-filter');
+        // combine filters
+        var filterValue = concatValues( filters );
+        // set filter for Isotope
+        $container.isotope({ filter: filterValue });
+    });
+
+    // add an active class to active filters
+    $('.button-group').each( function( i, buttonGroup ) {
+        var $buttonGroup = $( buttonGroup );
+        $buttonGroup.on( 'click', 'a', function( e ) {
+            e.preventDefault();
+            $buttonGroup.find('.active').removeClass('active');
+            $( this ).addClass('active');
+        });
+    });
+}// initWorkingGroupFilters
 
 // flatten object by concatting values
 function concatValues( obj ) {

@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php get_header(); 
+
+	var_dump( $_GET );
+?>
 
 <section class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ margin-bottom--large ][ resource-centre-results ]">
 
@@ -19,8 +22,6 @@
 		<article class="[ article ][ resource-centre__filters-wrapper ][ js-filter-container ]">
 			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Filter by</h5>
 			<section class="[ resource-centre__filter ][ js-filter ]">
-				<h6 class="[ resource-centre__filter__title ]">Working Groups:</h6>
-				<?php show_filters( 'working_group' ); ?>
 				<h6 class="[ resource-centre__filter__title ]">Languages:</h6>
 				<?php show_filters( 'language' ); ?>
 				<h6 class="[ resource-centre__filter__title ]">Sectors:</h6>
@@ -38,21 +39,19 @@
 	<section class="[ column-9_12 column sc_column_item ][ resource-centre-results__section ]">
 
 		<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Working groups</h5>
-		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][ active ]">Implementation</a>
-		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][  ]">Technical</a>
-		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][  ]">Subnational Governments</a>
-		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][  ]">Private Sector</a>
-		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][  ]">Accountability</a>
-		<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ][  ]">Incentive Mechanisms</a>
+		<div class="[ wg-filters ]">
+			<?php show_filters( 'working-group' ); ?>
+		</div>
+		
 
 		<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Results</h5>
 		<h6 class="[ no-margin ][ color-intermediate ]"> <small>Order by</small> </h6>
 		<article class="[ posts-sorting ]">
 			<!-- @Micho: Hay que cambiar la clase "icon-angle-up-1" del span por "icon-angle-down-1" en el click para que cambie el icono de abajo hacia arriba -->
-			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]" data-sort="date"><span class="[ sc_button_iconed ][ inline-block ]">Date</span> <span class="[ sc_button_iconed icon-angle-up-1 ][ inline-block ]"></span></a>
-			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]" data-sort="title"><span class="[ sc_button_iconed ][ inline-block ]">Name</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
-			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]" data-sort="country"><span class="[ sc_button_iconed ][ inline-block ]">Country</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
-			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]"><span class="[ sc_button_iconed ][ inline-block ]">Author</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
+			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]" data-asc="1" data-sort="date"><span class="[ sc_button_iconed ][ inline-block ]">Date</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
+			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]" data-asc="1" data-sort="title"><span class="[ sc_button_iconed ][ inline-block ]">Name</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
+			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]" data-asc="1" data-sort="country"><span class="[ sc_button_iconed ][ inline-block ]">Country</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
+			<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]"  data-asc="1" data-sort="author"><span class="[ sc_button_iconed ][ inline-block ]">Author</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
 
 		</article>
 
@@ -61,7 +60,6 @@
 		<article class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ posts-container ]">
 
 			<?php
-			$date = 3;
 			$resources_args = array(
 				'post_type' 		=> 'resource',
 				'posts_per_page' 	=> -1,
@@ -84,11 +82,9 @@
 						<p class="[ post__info ]">Sector: <?php echo get_sector( $post->ID ); ?></p>
 						<p class="[ post__info post__country ][ hidden ]"><?php echo get_country( $post->ID ); ?></p>
 						<p class="[ post__info post__date ][ hidden ]" ><?php echo get_the_time('U') ?></p>
-						<p class="[ post__info post__author ][ hidden ]" ><?php echo get_the_time('U') ?></p>
-						<?php $date -= 1; ?>
+						<p class="[ post__info  ]" >by: <span class="[ post__author ]"><?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?></span></p>
 					</a>
 				</div>
-			</div>
 			<?php endwhile; endif; ?>
 
 		</aticle>

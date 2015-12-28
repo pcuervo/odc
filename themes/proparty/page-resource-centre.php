@@ -26,30 +26,30 @@
 <div class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ posts-container ]">
 
 
-		<?php
-		$resources_args = array(
-			'post_type' 		=> 'resource',
-			'posts_per_page' 	=> -1,
-			'meta_key'			=> '_open_contribution_meta',
-			'meta_value'		=> 'yes'
-		);
+	<?php
+	$resources_args = array(
+		'post_type' 		=> 'resource',
+		'posts_per_page' 	=> -1,
+		'meta_key'			=> '_open_contribution_meta',
+		'meta_value'		=> 'yes'
+	);
 
-		$query_resources = new WP_Query( $resources_args );
-		if ( $query_resources->have_posts()) : while ( $query_resources->have_posts() ) : $query_resources->the_post(); ?>
-			<div class="[ column-4_12 sc_column_item ][ post ]">
-				<a class="[ post__card ]" href="<?php echo the_permalink(); ?>">
-					<h4 class="[ post__title ]">
-						<?php echo get_the_title() ?>
-					</h4>
-					<?php the_post_thumbnail( 'medium', array( 'class' => '[ post__image ][ image-responsive ]' ) ); ?>
-					<p class="[ post__excerpt ]"><?php echo  get_the_excerpt(); ?></p>
-					<p class="[ post__info ]">Sector: <?php echo get_sector( $post->ID ); ?></p>
-					<p class="[ post__info post__country ][ hidden ]"><?php echo get_country( $post->ID ); ?></p>
-					<p class="[ post__info post__date ][ hidden ]" ><?php echo get_the_time('U') ?></p>
-					<p class="[ post__info  ]" >by: <span class="[ post__author ]"><?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?></span></p>
-				</a>
-			</div>
-		<?php endwhile; endif; ?>
+	$query_resources = new WP_Query( $resources_args );
+	if ( $query_resources->have_posts()) : while ( $query_resources->have_posts() ) : $query_resources->the_post(); ?>
+		<div class="[ column-4_12 sc_column_item ][ post ]">
+			<a class="[ post__card ]" href="<?php echo the_permalink(); ?>">
+				<h4 class="[ post__title ]">
+					<?php echo get_the_title() ?>
+				</h4>
+				<?php the_post_thumbnail( 'medium', array( 'class' => '[ post__image ][ image-responsive ]' ) ); ?>
+				<p class="[ post__excerpt ]"><?php echo  get_the_excerpt(); ?></p>
+				<p class="[ post__info ]">Sector: <?php echo get_sector( $post->ID ); ?></p>
+				<p class="[ post__info post__country ][ hidden ]"><?php echo get_country( $post->ID ); ?></p>
+				<p class="[ post__info post__date ][ hidden ]" ><?php echo get_the_time('U') ?></p>
+				<p class="[ post__info  ]" >by: <span class="[ post__author ]"><?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?></span></p>
+			</a>
+		</div>
+	<?php endwhile; endif; ?>
 
 </div>
 

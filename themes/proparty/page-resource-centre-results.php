@@ -1,7 +1,4 @@
-<?php get_header(); 
-
-	var_dump( $_GET );
-?>
+<?php get_header(); ?>
 
 <section class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ margin-bottom--large ][ resource-centre-results ]">
 

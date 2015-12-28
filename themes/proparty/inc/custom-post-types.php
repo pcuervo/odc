@@ -7,18 +7,141 @@
 add_action('init', function(){
 
 	// RESOURCES
-	$resource_pt = register_cuztom_post_type( 'Resource' );
-	// Add taxonomies
-	$resource_pt->add_taxonomy( 'Language' );
+	// $resource_pt = register_cuztom_post_type( 'Resource' );
+	// // Add taxonomies
+	// $resource_pt->add_taxonomy( 'Language' );
+	// insert_language_taxonomy_terms();
+	// $resource_pt->add_taxonomy( 'Sector' );
+	// //insert_resource_type_taxonomy_terms();
+	// $resource_pt->add_taxonomy( 'Country' );	
+	// insert_country_taxonomy_terms();
+	// $resource_pt->add_taxonomy( 'Resource Type' );	
+	// insert_resource_type_taxonomy_terms();
+	// $resource_pt->add_taxonomy( 'Working Group' );	
+	// insert_working_group_taxonomy_terms();
+
+	// MAP TEST
+	$labels = array(
+		'name'          => 'Resource',
+		'singular_name' => 'Resource',
+		'add_new'       => 'New Resource',
+		'add_new_item'  => 'New Resource',
+		'edit_item'     => 'Edit Resource',
+		'new_item'      => 'New Resource',
+		'all_items'     => 'All',
+		'view_item'     => 'View Resource',
+		'menu_name'     => 'Resource'
+	);
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'resource' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 6,
+		'supports'           => array( 'title', 'editor', 'thumbnail' )
+	);
+	register_post_type( 'resource', $args );
+
+	if( ! taxonomy_exists('language')){
+
+		$labels = array(
+			'name'              => 'Language',
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'language' ),
+		);
+
+		register_taxonomy( 'language', 'resource', $args );
+	}
 	insert_language_taxonomy_terms();
-	$resource_pt->add_taxonomy( 'Sector' );
-	//insert_resource_type_taxonomy_terms();
-	$resource_pt->add_taxonomy( 'Country' );	
+
+	if( ! taxonomy_exists('sector')){
+
+		$labels = array(
+			'name'              => 'Sector',
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'sector' ),
+		);
+
+		register_taxonomy( 'sector', 'resource', $args );
+	}
+
+	if( ! taxonomy_exists('country')){
+
+		$labels = array(
+			'name'              => 'Country',
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'country' ),
+		);
+
+		register_taxonomy( 'country', 'resource', $args );
+	}
 	insert_country_taxonomy_terms();
-	$resource_pt->add_taxonomy( 'Resource Type' );	
+
+	if( ! taxonomy_exists('resource_type')){
+
+		$labels = array(
+			'name'              => 'Country',
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'resource_type' ),
+		);
+
+		register_taxonomy( 'resource_type', 'resource', $args );
+	}
 	insert_resource_type_taxonomy_terms();
-	$resource_pt->add_taxonomy( 'Working Group' );	
+
+	if( ! taxonomy_exists('working_group')){
+
+		$labels = array(
+			'name'              => 'Working Group',
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'working_group' ),
+		);
+
+		register_taxonomy( 'working_group', 'resource', $args );
+	}
 	insert_working_group_taxonomy_terms();
+
 
 });
 

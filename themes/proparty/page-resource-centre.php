@@ -52,43 +52,6 @@
 		<?php endwhile; endif; ?>
 	
 
-
-	<div class="[ column-4_12 sc_column_item ][ post ]">
-		<a class="[ post__card ]">
-			<h4 class="[ post__title ]"> This is a test</h4>
-			<img src="http://pcuervo.com/od4d/wp-content/uploads/2015/12/MSF-Yann-Libessart-Ebola-trial-Conakry-Guinea-300x141.jpg" class="[ post__image ][ image-responsive ]" alt="IDRC welcomes early Ebola&nbsp;vaccine trial results">
-			<p class="[ post__excerpt ]">I am enim adesse poterit hoc non est positum in nostra actione duo reges constructio interrete minime vero inquit</p>
-			<p class="[ post__sector ]">Policies</p>
-		</a>
-	</div>
-
-	<div class="[ column-4_12 sc_column_item ][ post ]">
-		<a class="[ post__card ]">
-			<h4 class="[ post__title ]">Istam voluptatem perpetuam quis potest praestare sapienti qualem igitur.</h4>
-			<img src="http://pcuervo.com/od4d/wp-content/uploads/2015/12/MSF-Yann-Libessart-Ebola-trial-Conakry-Guinea-300x141.jpg" class="[ post__image ][ image-responsive ]" alt="IDRC welcomes early Ebola&nbsp;vaccine trial results">
-			<p class="[ post__excerpt ]">Non pugnem cum homine cur tantum habeat in natura boni nullus est igitur cuiusquam dies natalis.</p>
-			<p class="[ post__sector ]">Policies</p>
-		</a>
-	</div>
-
-	<div class="[ column-4_12 sc_column_item ][ post ]">
-		<a class="[ post__card ]">
-			<h4 class="[ post__title ]">An ea quae per vinitorem antea consequebatur per se ipsa curabit.</h4>
-			<img src="http://pcuervo.com/od4d/wp-content/uploads/2015/12/MSF-Yann-Libessart-Ebola-trial-Conakry-Guinea-300x141.jpg" class="[ post__image ][ image-responsive ]" alt="IDRC welcomes early Ebola&nbsp;vaccine trial results">
-			<p class="[ post__excerpt ]">Etenim semper illud extra est quod arte comprehenditur sed vobis voluptatum perceptarum recordatio vitam beatam facit et quidem corpore perceptarum praeclare hoc quidem ita nemo beato.</p>
-			<p class="[ post__sector ]">Policies</p>
-		</a>
-	</div>
-
-	<div class="[ column-4_12 sc_column_item ][ post ]">
-		<a class="[ post__card ]">
-			<h4 class="[ post__title ]">Quod autem ratione actum est id.</h4>
-			<img src="http://pcuervo.com/od4d/wp-content/uploads/2015/12/MSF-Yann-Libessart-Ebola-trial-Conakry-Guinea-300x141.jpg" class="[ post__image ][ image-responsive ]" alt="IDRC welcomes early Ebola&nbsp;vaccine trial results">
-			<p class="[ post__excerpt ]">An est aliquid quod te sua sponte delectet haec paradoca illi nos admirabilia dicamus.</p>
-			<p class="[ post__sector ]">Policies</p>
-		</a>
-	</div>
-
 </div>
 
 <?php get_footer(); ?>

@@ -12,6 +12,12 @@ function footer_scripts(){
 		<script type="text/javascript">
 			$( document ).ready(function() {
 
+				<?php if( is_page( 'resource-centre' ) ) : ?>
+
+					runIsotope('.posts-container', '.post' );
+
+				<?php endif; ?>
+
 				<?php if( is_page( 'resource-centre-results' ) ) : ?>
 
 					initCheckBoxFilters();
@@ -24,7 +30,7 @@ function footer_scripts(){
 						} else {
 							$(this).data('asc', 1);
 						}
-						$('.posts-container').isotope({ 
+						$('.posts-container').isotope({
 							sortBy : data,
 							sortAscending : asc
 						});

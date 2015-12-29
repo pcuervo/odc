@@ -4524,6 +4524,14 @@ div#booking_calendar_select_label + .booking_cleardiv {
 .color-intermediate{ color: #616161 !important; }
 
 
+/**
+ * Text align
+**/
+
+.text-center{ text-align: center; }
+.text-right{ text-align: right; }
+.text-left{ text-align: left; }
+
 
 
 /*------------------------------------*\

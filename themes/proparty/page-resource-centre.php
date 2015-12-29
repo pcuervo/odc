@@ -19,6 +19,13 @@
 
 </div>
 
+<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ][ text-center ]">
+	<span style="font-weight: 400;">Working groups</span>
+</h5>
+<div class="[ wg-filters ][ text-center ]">
+	<?php show_filters( 'working-group' ); ?>
+</div>
+
 <h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">
 	<span style="font-weight: 400;">Resources opened to contribution</span>
 </h5>

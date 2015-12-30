@@ -152,6 +152,11 @@ function show_filters( $taxonomy ){
 		return;
 	}
 
+	if( 'working-group-centre' == $taxonomy){
+		show_filters_working_groups_centre();
+		return;
+	}
+
 	$args = array(
 	    'orderby'                => 'name',
 	    'hide_empty'             => true,
@@ -172,6 +177,7 @@ function show_filters( $taxonomy ){
  * @param $taxonomy
 */
 function show_filters_working_groups(){
+	$group_active = isset($_POST['group']) ? $_POST['group'] : '';
 
 	$args = array(
 	    'orderby'                => 'name',
@@ -183,8 +189,32 @@ function show_filters_working_groups(){
 	echo '<div class="[ button-group ]" data-filter-group="working_group">';
 
 	echo '<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ]" data-filter="">All</a>';
+	foreach ( $filters as $filter ): 
+		$active = $filter->slug == $group_active ? 'active' : '';
+		echo '<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ] '.$active.'" data-filter=".' . $filter->slug . '">' . $filter->name . '</a>';
+	endforeach;
+	echo '</div>';
+}
+
+
+/**
+ * Show filters RESOURCE CENTRE
+ * @param $taxonomy
+*/
+function show_filters_working_groups_centre(){
+
+	$args = array(
+	    'orderby'                => 'name',
+	    'hide_empty'             => true,
+	);
+	$filters = get_terms( 'working_group', $args );
+	if( empty( $filters ) ) return;
+
+	echo '<div class="[ button-group ]" data-filter-group="working_group">';
+
+	echo '<a href="#" class="[ form-groups sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ]" data-filter="">All</a>';
 	foreach ( $filters as $filter ) 
-		echo '<a href="#" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ]" data-filter=".' . $filter->slug . '">' . $filter->name . '</a>';
+		echo '<form method="POST" action="'.site_url() . '/resource-centre-results" class="form-groups"><input type="hidden" name="group" value="'.$filter->slug.'"><input type="submit" class="[ sc_button sc_button_size_medium ][ color-light ][ sc_button_bordered ]" value="'.$filter->name.'"></form>';
 
 	echo '</div>';
 }
@@ -298,3 +328,12 @@ function get_res_type( $post_id ){
 
 }// get_res_type
 
+
+function getResources($search){
+	global $wpdb;
+
+	$exta = $search == '' ? '' : 'AND (post_title LIKE "%'.$search.'%" OR post_content LIKE "%'.$search.'%")';
+	
+	return $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}posts WHERE post_type = 'resource' $exta;", OBJECT );
+
+}

@@ -10,7 +10,7 @@
 			<div class="[ search_form_wrap ]">
 				<form role="search" method="post" class="[ search_form ]" action="<?php echo site_url() . '/resource-centre-results' ?>">
 					<button type="submit" class="[ search_submit icon-search-1 ][ right-0 ]" title="Start search"></button>
-					<input type="text" class="[ search_field search_field--large ][ width-100 ]" placeholder="" value="" name="s" title="">
+					<input type="text" class="[ search_field search_field--large ][ width-100 ]" placeholder="" value="" name="search-resources" title="">
 				</form>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 	<span style="font-weight: 400;">Working groups</span>
 </h5>
 <div class="[ wg-filters ][ text-center ]">
-	<?php show_filters( 'working-group' ); ?>
+	<?php show_filters( 'working-group-centre' ); ?>
 </div>
 
 <h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">

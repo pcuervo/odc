@@ -13,7 +13,7 @@ function footer_scripts(){
 			$( document ).ready(function() {
 
 				<?php if( is_page( 'resource-centre' ) ) : ?>
-
+				
 					runIsotope('.posts-container', '.post' );
 
 				<?php endif; ?>

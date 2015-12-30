@@ -4668,3 +4668,6 @@ div#booking_calendar_select_label + .booking_cleardiv {
 .single-resource .sidebar.widget_area{
 	display: none;
 }
+
+.form-groups{display: inline;}
+.form-groups.sc_button{display: inline;}

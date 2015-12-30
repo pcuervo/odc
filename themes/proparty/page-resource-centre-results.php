@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php get_header(); 
+$search = isset($_POST['search-resources']) ? $_POST['search-resources'] : '';?>
 
 <section class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ margin-bottom--large ][ resource-centre-results ]">
 
@@ -17,6 +18,7 @@
 		</article> -->
 
 		<article class="[ article ][ resource-centre__filters-wrapper ][ js-filter-container ]">
+			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">You searched: <?php echo $search; ?></h5>
 			<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">Filter by</h5>
 			<section class="[ resource-centre__filter ][ js-filter ]">
 				<h6 class="[ resource-centre__filter__title ]">Languages:</h6>
@@ -53,36 +55,36 @@
 		</article>
 
 		<div class="clear"></div>
+		
+		<?php $group_active = isset($_POST['group']) ? $_POST['group'] : 'ninguno'; ?>
+		<article class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ posts-container ]" data-group_active="<?php echo $group_active; ?>">
+	
+			<?php 
+			$query_resources = getResources($search);
+			if ( ! empty($query_resources) ) : 
+				foreach ( $query_resources as  $post ) :
+					setup_postdata( $post );
 
-		<article class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ posts-container ]">
-
-			<?php
-			$resources_args = array(
-				'post_type' 		=> 'resource',
-				'posts_per_page' 	=> -1,
-			);
-			$query_resources = new WP_Query( $resources_args );
-			if ( $query_resources->have_posts()) : while ( $query_resources->have_posts() ) : $query_resources->the_post();
-				$resource_info = get_resource_info( $post->ID );
-				$resource_filter_classes = '';
-				foreach ( $resource_info as $key => $value ) {
-					$resource_filter_classes .= $value . ' ';
-				}
-			?>
-				<div class="[ column-4_12 sc_column_item ][ post ][ <?php echo $resource_filter_classes; ?>]">
-					<a class="[ post__card ]" href="<?php echo the_permalink(); ?>">
-						<h4 class="[ post__title ]">
-							<?php echo get_the_title() ?>
-						</h4>
-						<?php the_post_thumbnail( 'medium', array( 'class' => '[ post__image ][ image-responsive ]' ) ); ?>
-						<p class="[ post__excerpt ]"><?php echo  get_the_excerpt(); ?></p>
-						<p class="[ post__info ]">Sector: <?php echo get_sector( $post->ID ); ?></p>
-						<p class="[ post__info post__country ][ hidden ]"><?php echo get_country( $post->ID ); ?></p>
-						<p class="[ post__info post__date ][ hidden ]" ><?php echo get_the_time('U') ?></p>
-						<p class="[ post__info  ]" >by: <span class="[ post__author ]"><?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?></span></p>
-					</a>
-				</div>
-			<?php endwhile; endif; ?>
+					$resource_info = get_resource_info( $post->ID );
+					$resource_filter_classes = '';
+					foreach ( $resource_info as $key => $value ) :
+						$resource_filter_classes .= $value . ' ';
+					endforeach;?>
+					<div class="[ column-4_12 sc_column_item ][ post ][ <?php echo $resource_filter_classes; ?>]">
+						<a class="[ post__card ]" href="<?php echo the_permalink(); ?>">
+							<h4 class="[ post__title ]">
+								<?php echo get_the_title() ?>
+							</h4>
+							<?php the_post_thumbnail( 'medium', array( 'class' => '[ post__image ][ image-responsive ]' ) ); ?>
+							<p class="[ post__excerpt ]"><?php echo  get_the_excerpt(); ?></p>
+							<p class="[ post__info ]">Sector: <?php echo get_sector( $post->ID ); ?></p>
+							<p class="[ post__info post__country ][ hidden ]"><?php echo get_country( $post->ID ); ?></p>
+							<p class="[ post__info post__date ][ hidden ]" ><?php echo get_the_time('U') ?></p>
+							<p class="[ post__info  ]" >by: <span class="[ post__author ]"><?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?></span></p>
+						</a>
+					</div>
+				<?php endforeach; 
+			endif; ?>
 
 		</aticle>
 

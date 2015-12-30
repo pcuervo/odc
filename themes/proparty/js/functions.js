@@ -32,6 +32,11 @@ function runIsotope( container, item ){
 **/
 function initWorkingGroupFilters( ){
     var $container = $('.posts-container');
+    var groupActive = $container.attr('data-group_active');
+    
+    if (groupActive != 'ninguno') {
+        $container.isotope({ filter: '.'+groupActive });
+    };
 
     // store filter for each group
     var filters = {};

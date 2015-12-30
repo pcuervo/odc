@@ -57,7 +57,7 @@ $search = isset($_POST['search-resources']) ? $_POST['search-resources'] : '';?>
 		<div class="clear"></div>
 		
 		<?php $group_active = isset($_POST['group']) ? $_POST['group'] : 'ninguno'; ?>
-		<article class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ posts-container ]" data-group_active="<?php echo $group_active; ?>">
+		<article class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ posts-container ]" data-group_active=".<?php echo $group_active; ?>">
 	
 			<?php 
 			$query_resources = getResources($search);

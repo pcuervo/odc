@@ -34,8 +34,8 @@ function initWorkingGroupFilters( ){
     var $container = $('.posts-container');
     var groupActive = $container.attr('data-group_active');
     
-    if (groupActive != 'ninguno') {
-        $container.isotope({ filter: '.'+groupActive });
+    if (groupActive != '.ninguno') {
+        $container.isotope({ filter: groupActive });
     };
 
     // store filter for each group
@@ -51,6 +51,7 @@ function initWorkingGroupFilters( ){
         // combine filters
         var filterValue = concatValues( filters );
         // set filter for Isotope
+        $container.attr('data-group_active', filterValue);
         $container.isotope({ filter: filterValue });
     });
 
@@ -84,9 +85,14 @@ function initCheckBoxFilters(){
     //$container.isotope();
     // do stuff when checkbox change
     $('.option-set').on( 'change', function( jQEvent ) {
+        var groupActive = $container.attr('data-group_active');
+        
         var $checkbox = $( jQEvent.target );
         manageCheckbox( $checkbox, filters );
         var comboFilter = getComboFilter( filters );
+
+        $('.button-group a').removeClass('active');
+        
         $container.isotope({ filter: comboFilter });
     });
 }
@@ -119,7 +125,6 @@ function getComboFilter( filters ) {
         }
         i++;
     }
-
     var comboFilter = comboFilters.join(', ');
     return comboFilter;
 }

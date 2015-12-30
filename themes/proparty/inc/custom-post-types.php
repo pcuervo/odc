@@ -13,11 +13,11 @@ add_action('init', function(){
 	// insert_language_taxonomy_terms();
 	// $resource_pt->add_taxonomy( 'Sector' );
 	// //insert_resource_type_taxonomy_terms();
-	// $resource_pt->add_taxonomy( 'Country' );	
+	// $resource_pt->add_taxonomy( 'Country' );
 	// insert_country_taxonomy_terms();
-	// $resource_pt->add_taxonomy( 'Resource Type' );	
+	// $resource_pt->add_taxonomy( 'Resource Type' );
 	// insert_resource_type_taxonomy_terms();
-	// $resource_pt->add_taxonomy( 'Working Group' );	
+	// $resource_pt->add_taxonomy( 'Working Group' );
 	// insert_working_group_taxonomy_terms();
 
 	// MAP TEST
@@ -107,7 +107,7 @@ add_action('init', function(){
 	if( ! taxonomy_exists('resource_type')){
 
 		$labels = array(
-			'name'              => 'Country',
+			'name'              => 'Resource type',
 		);
 		$args = array(
 			'hierarchical'      => true,

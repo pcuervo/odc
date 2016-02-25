@@ -3,7 +3,6 @@
  * Theme sprecific functions and definitions
  */
 
-
 /* Theme setup section
 ------------------------------------------------------------------- */
 
@@ -336,4 +335,22 @@ function getResources($search){
 	
 	return $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}posts WHERE post_type = 'resource' $exta;", OBJECT );
 
+}
+
+
+/**	
+ * GET DATE TRANSFORM
+ */
+function getDateTransform($fecha){
+	$dias = array('Lunes','Martes','Miercoles','Jueves','Viernes','Sábado','Domingo');
+	$dia_name = $dias[date('N', strtotime($fecha)) - 1];
+	$MesTresLetras = date('M', strtotime($fecha) );
+
+	$fecha = explode('-', $fecha);
+
+	$mes = array('01' => 'Enero', '02' => 'Febrero', '03' => 'Marzo', '04' => 'Abril', '05' => 'Mayo', '06' =>'Junio', '07' => 'Julio', '08' => 'Agosto', '09' => 'Septiembre', '10' => 'Octubre', '11' => 'Noviembre', '12' => 'Diciembre');
+
+
+
+	return array($fecha[2], $mes[$fecha[1]], $fecha[0], $dia_name, $fecha[1], $MesTresLetras);
 }

@@ -4671,3 +4671,29 @@ div#booking_calendar_select_label + .booking_cleardiv {
 
 .form-groups{display: inline;}
 .form-groups.sc_button{display: inline;}
+
+/**
+ * CAMBIOS NUEVOS APARTIR DEL 24-02-2016
+ */
+.content_home{margin-bottom: 60px;}
+.sc_gap_home{background-color: rgb(240, 240, 240); margin: 26px 0 0 0;padding: 1em 1.5em 3em 1em;}
+.caja-principal{position: relative; overflow: hidden; width: 25%; height: 154px; margin-right: 1.2%; margin-top: 15px; padding: 0 3.7%; float: left; background: #fff;line-height: 162px;}
+.caja-principal a{display: inline-block;vertical-align: middle;width: 100%;font-size: 18px;line-height: 16px;}
+.caja-principal.ultimo{margin-right: 0;}
+.caja-principal img{width: 23%; float: left; margin-right: 10%;}
+.caja-principal p{margin: 0;}
+.caja-principal h5{display: block;overflow: hidden;width: 67%;font-family: 'Montserrat'; font-size: 18px; font-weight: normal; line-height: 22px;}
+.caja-principal img.candado{ margin-top: -27px;}
+.caja-principal img.reloj{ margin-top: -10px;}
+.caja-principal img.llave{ margin-top: -11px;}
+.caja-principal img.join{ margin-top: -11px;}
+.caja-principal img.estructura{ margin-top: 11px;}
+.caja-principal img.foco{ margin-top: 0;}
+
+.content_home_newsfeed{position: relative; overflow: hidden; width: 100%; background: #fff; margin-bottom: 30px; }
+.content_home_newsfeed img{display: block; width: 38.6%; height: auto; float: left; margin-right: 4.9%;}
+.content_home_newsfeed h3{font-family: 'Montserrat'; font-size: 22px; font-weight: bold; margin-top: 35px; line-height: normal; padding-right: 5%;}
+.content_home_newsfeed p{text-decoration: none; color: #000; padding-right: 5%;}
+.content_home_newsfeed .date-news{text-transform: uppercase; font-size: 19px; font-weight: bold; color:#000;}
+.content_home_newsfeed .date-news span{color: #00b6f1;}
+.text-mision{font-size: 19px; font-family: 'Lora', sans-serif; color: #000; padding-right: 45%; font-style: italic;}

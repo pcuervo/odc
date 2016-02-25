@@ -38,6 +38,7 @@ Apple iPod Touch (5th generation)
 	.days_container_all .booking_day_container {width: 106px;}
 	.booking_name_days_container .booking_day_name {width: 106px;}
 	#booking_slot_form .booking_font_cuprum select {width: 68px;}
+	.content_home_newsfeed h3{margin-top: 22px;}
 }
 
 
@@ -149,6 +150,7 @@ Apple iPod Touch (4th generation)
 	.days_container_all .booking_day_slots {font-size: 10px}
 	.days_container_all .booking_day_book {font-size: 10px;margin-left: 2px;}
 	#booking_slot_form {width: 100%;}
+	.content_home_newsfeed h3{margin-top: 9px;}
 }
 
 
@@ -293,8 +295,8 @@ Samsung Galaxy
 	.scroll_to_top.show {
 		bottom: 1em;
 	}
-
-
+	
+	.text-mision{padding-right: 0;}
 }
 
 
@@ -598,8 +600,7 @@ Samsung Galaxy
 	input[type="submit"]:before, input[type="button"]:before, button:before, .sc_button:before {
 		margin-right:4px;
 	}
-	.sc_price_block .sc_price_block_description {
-}
+	.sc_price_block .sc_price_block_description {}
 	.sc_slider, .sc_slider .swiper_slide {
 		max-height:210px;
 	}
@@ -618,10 +619,40 @@ Samsung Galaxy
 	/* Reservation Table */
 	.reservation_table_wrapper .sc_column_item {width: 100% !important;}
 	.reservation_table_wrapper figure {display: inline;}
+
+	
+}
+
+
+
+@media (max-width: 799px) {
+	.caja-principal{width: 41.4%; margin-right: 0.6%; margin-left: 0.6%; margin-top: 7px;}
+	.caja-principal.ultimo{margin-right: 0.6%;}
+	.text-mision{padding-right: 0;}
+}
+
+@media (max-width: 549px) {
+	.caja-principal{ width: 80%;margin-right: 0;margin-left: 0;margin-top: 7px;padding: 0 10%;height: 130px;line-height: 154px;}
+	.caja-principal img{width: 17%;}
+	.content_home_newsfeed{background: transparent;}
+	.content_home_newsfeed h3{font-size: 16px; text-align: center;}
+	.content_home_newsfeed img{width: 68.6%; margin: 0 auto; float: none;}
 }
 
 @media (min-width: 630px) and (max-width: 650px) {
 	.rev_slider_wrapper .tp-caption.proparty_home1_slide2_btn {	left: 362px !important;	}
+}
+
+@media (max-width: 390px) {
+	.caja-principal{width: 86%;height: auto;line-height: inherit; padding: 10px 7%;}
+	.caja-principal img {display: block;width: 39.5px;float: none;margin: 0 auto 15px;}
+	.caja-principal h5{width: 100%; text-align: center; margin-bottom: 0;}
+	.caja-principal img.candado,
+	.caja-principal img.reloj,
+	.caja-principal img.llave,
+	.caja-principal img.join,
+	.caja-principal img.estructura,
+	.caja-principal img.foco{ margin-top: 0;}
 }
 
 /* "max-" oriented styles */
@@ -683,6 +714,7 @@ Samsung Galaxy
 	/* Vis Composer Grid */
 	.vc_proparty_featured_projects_tmpl .vc_gitem-post-data-source-post_title {height: 64px;
 		overflow: hidden;}
+
 }
 @media (max-width: 1160px) {
 	/* Revolution Slider */
@@ -792,6 +824,10 @@ Samsung Galaxy
 	.menu_main_wrap .logo_main {margin: 0;}
 
 	.page_top_wrap .page_title {padding: 18px 0;}
+
+	.content_home_newsfeed h3 {margin-top: 11px;font-size: 20px;}
+	.content_home_newsfeed .date-news,
+	.content_home_newsfeed p {display: none;}
 }
 @media (max-width: 900px) {
 
@@ -1116,6 +1152,7 @@ Very common low res
 	/* Different */
 	#sidemenu_button.top_panel_hidden {top: 66px;}
 	.rev_slider_wrapper .therapy_h2_search {display: none}
+	.content_home_newsfeed h3{font-size: 18px;}
 }
 @media (max-width: 480px) {
 	/* Revolution Slider */

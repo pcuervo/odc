@@ -1,57 +1,252 @@
 <?php get_header(); ?>
 
-<div class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ margin-bottom--large ]">
+<h3 class="post__title text-center [ no-margin ]">FIND RESOURCES BY</h3>
 
-	<div class="[ column-6_12 column-centered sc_column_item ]">
-		<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">
-			<span style="font-weight: 400;">Search resources</span>
-		</h5>
-		<div class="[ search_wrap search_wrap--large search_style_regular search_ajax inited search_opened ][ width-100 ]" title="Open/close search form">
-			<div class="[ search_form_wrap ]">
-				<form role="search" method="post" class="[ search_form ]" action="<?php echo site_url() . '/resource-centre-results' ?>">
-					<button type="submit" class="[ search_submit icon-search-1 ][ right-0 ]" title="Start search"></button>
-					<input type="text" class="[ search_field search_field--large ][ width-100 ]" placeholder="" value="" name="s" title="">
-				</form>
-			</div>
-		</div>
+<h5 class="sub-title-centre">OPEN TO CONTRIBUTION</h5>
 
-	</div>
+<div class="[ posts-centre ]">
 
-</div>
+	<?php $resources_args = array('post_type' => 'resource','posts_per_page' => 3,'meta_key' => '_open_contribution_meta','meta_value' => 'yes');
 
-<h5 class="sc_title sc_title_regular sc_align_center [ no-margin ]">
-	<span style="font-weight: 400;">Resources opened to contribution</span>
-</h5>
-
-<div class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ posts-container ]">
-
-	
-		<?php
-		$resources_args = array(
-			'post_type' 		=> 'resource',
-			'posts_per_page' 	=> -1,
-			'meta_key'			=> '_open_contribution_meta',
-			'meta_value'		=> 'yes'
-		);
-
-		$query_resources = new WP_Query( $resources_args );
-		if ( $query_resources->have_posts()) : while ( $query_resources->have_posts() ) : $query_resources->the_post(); ?>
-			<div class="[ column-4_12 sc_column_item ][ post ]">
+	$query_resources = new WP_Query( $resources_args );
+	if ( $query_resources->have_posts()) : 
+		$count = 1;
+		while ( $query_resources->have_posts() ) : $query_resources->the_post(); 
+			$class = $count == 3 ? 'ultimo' : ''; 
+			$working_group = wp_get_post_terms($post->ID, 'working_group', array("fields" => "all"));
+			$sector = wp_get_post_terms($post->ID, 'sector', array("fields" => "all"));
+			$resource_type = wp_get_post_terms($post->ID, 'resource_type', array("fields" => "all")); ?>
+			
+			<div class="[ sc_column_item ][ post-centre <?php echo $class; ?> ]">
 				<a class="[ post__card ]" href="<?php echo the_permalink(); ?>">
-					<h4 class="[ post__title ]">
-						<?php echo get_the_title() ?>
-					</h4>
-					<?php the_post_thumbnail( 'medium', array( 'class' => '[ post__image ][ image-responsive ]' ) ); ?>
-					<p class="[ post__excerpt ]"><?php echo  get_the_excerpt(); ?></p>
-					<p class="[ post__info ]">Sector: <?php echo get_sector( $post->ID ); ?></p>
-					<p class="[ post__info post__country ][ hidden ]"><?php echo get_country( $post->ID ); ?></p>
-					<p class="[ post__info post__date ][ hidden ]" ><?php echo get_the_time('U') ?></p>
-					<p class="[ post__info  ]" >by: <span class="[ post__author ]"><?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?></span></p>
+					<img class="circle-img" src="<?php echo THEMEPATH.'/images/circle-azul.jpg' ?>" alt="">
+					<h4 class="[ post__title ]"><?php echo get_the_title() ?></h4>
+					<p class="[ post__author ]">Author: <?php the_author(); ?></p>
+					<hr>
+					<div class="[ cajita ][ working ] ">
+						<p class="[ taxonomy ]">Working Group</p>
+						<p class="[ term ]"><?php echo $working_group[0]->name; ?></p>
+					</div>
+					<div class="[ cajita ][ sector ] ">
+						<p class="[ taxonomy ]">Sector</p>
+						<p class="[ term ]"><?php echo $sector[0]->name; ?></p>
+					</div>
+					<div class="[ cajita ][ type ] ">
+						<p class="[ taxonomy ]">Type</p>
+						<p class="[ term ]"><?php echo $resource_type[0]->name; ?></p>
+					</div>
+					<hr>
+					<div class="[ cajita ][ working ] ">
+						<p class="[ taxonomy ]">Open untill</p>
+						<p class="[ date ]">July 5</p>
+					</div>
+				
 				</a>
 			</div>
-		<?php endwhile; endif; ?>
+		
+			<?php $count++; 
+		endwhile; 
+	endif; ?>
 	
+</div>
 
+<h5 class="sub-title-centre">Working Group</h5>
+
+<div class="[ posts-centre ]">
+
+	<?php  $implementation = getPostCentre('working_group', 'implementation');
+	if ( $implementation ) :  
+		$sector = wp_get_post_terms($post->ID, 'sector', array("fields" => "all"));
+		$resource_type = wp_get_post_terms($post->ID, 'resource_type', array("fields" => "all"));
+		$user = get_user_by( 'id', $implementation->post_author );?>
+		
+		<div class="[ sc_column_item ][ post-centre ]">
+			<p class="name-term">Implementation</p>
+			<a class="[ post__card ]" href="<?php echo the_permalink(); ?>">
+				<h4 class="[ post__title ]"><?php echo $implementation->post_title ?></h4>
+				<p class="[ post__author ]">Author: <?php echo $user->user_login; ?></p>
+				<hr>
+				<div class="[ cajita ][ working ] ">
+					<p class="[ taxonomy ]">Working Group</p>
+					<p class="[ term ]">Implementation</p>
+				</div>
+				<div class="[ cajita ][ sector ] ">
+					<p class="[ taxonomy ]">Sector</p>
+					<p class="[ term ]"><?php echo $sector[0]->name; ?></p>
+				</div>
+				<div class="[ cajita ][ type ] ">
+					<p class="[ taxonomy ]">Type</p>
+					<p class="[ term ]"><?php echo $resource_type[0]->name; ?></p>
+				</div>
+			</a>
+		</div>
+	<?php endif; ?>
+
+	<?php  $incentive = getPostCentre('working_group', 'incentive-mechanisms');
+	if ( $incentive ) :  
+		$sector = wp_get_post_terms($incentive->ID, 'sector', array("fields" => "all"));
+		$resource_type = wp_get_post_terms($incentive->ID, 'resource_type', array("fields" => "all"));
+		$user = get_user_by( 'id', $incentive->post_author ); ?>
+		
+		<div class="[ sc_column_item ][ post-centre ]">
+			<p class="name-term">Incentive Mechanisms</p>
+			<a class="[ post__card ]" href="<?php echo the_permalink(); ?>">
+				<h4 class="[ post__title ]"><?php echo $incentive->post_title ?></h4>
+				<p class="[ post__author ]">Author: <?php echo $user->user_login; ?></p>
+				<hr>
+				<div class="[ cajita ][ working ] ">
+					<p class="[ taxonomy ]">Working Group</p>
+					<p class="[ term ]">Incentive Mechanisms</p>
+				</div>
+				<div class="[ cajita ][ sector ] ">
+					<p class="[ taxonomy ]">Sector</p>
+					<p class="[ term ]"><?php echo $sector[0]->name; ?></p>
+				</div>
+				<div class="[ cajita ][ type ] ">
+					<p class="[ taxonomy ]">Type</p>
+					<p class="[ term ]"><?php echo $resource_type[0]->name; ?></p>
+				</div>
+			</a>
+		</div>
+	<?php endif; ?>
+
+	<?php  $subnational = getPostCentre('working_group', 'subnational-governments');
+	if ( $subnational ) :  
+		$sector = wp_get_post_terms($subnational->ID, 'sector', array("fields" => "all"));
+		$resource_type = wp_get_post_terms($subnational->ID, 'resource_type', array("fields" => "all"));
+		$user = get_user_by( 'id', $subnational->post_author ); ?>
+		
+		<div class="[ sc_column_item ][ post-centre ultimo ]">
+			<p class="name-term">Subnational Governments</p>
+			<a class="[ post__card ]" href="<?php echo the_permalink(); ?>">
+				<h4 class="[ post__title ]"><?php echo $subnational->post_title ?></h4>
+				<p class="[ post__author ]">Author: <?php echo $user->user_login; ?></p>
+				<hr>
+				<div class="[ cajita ][ working ] ">
+					<p class="[ taxonomy ]">Working Group</p>
+					<p class="[ term ]">Subnational Governments</p>
+				</div>
+				<div class="[ cajita ][ sector ] ">
+					<p class="[ taxonomy ]">Sector</p>
+					<p class="[ term ]"><?php echo $sector[0]->name; ?></p>
+				</div>
+				<div class="[ cajita ][ type ] ">
+					<p class="[ taxonomy ]">Type</p>
+					<p class="[ term ]"><?php echo $resource_type[0]->name; ?></p>
+				</div>
+			</a>
+		</div>
+	<?php endif; ?>
+	
+</div>
+
+<h5 class="sub-title-centre">SECTOR</h5>
+
+<div class="[ posts-centre ]">
+
+	<?php $resources_args = array(
+		'post_type' => 'resource',
+		'posts_per_page' => 3,
+		'meta_key' => '_open_contribution_meta',
+		'meta_value' => 'no', 
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'sector',
+				'field' => 'slug',
+				'terms' => array('agriculture', 'anticorruption', 'education', 'private-sector', 'entrepeneurship', 'terrorism') )
+			)
+		);
+
+	$query_resources = new WP_Query( $resources_args );
+	if ( $query_resources->have_posts()) : 
+		$count = 1;
+		while ( $query_resources->have_posts() ) : $query_resources->the_post(); 
+			$class = $count == 3 ? 'ultimo' : ''; 
+			$working_group = wp_get_post_terms($post->ID, 'working_group', array("fields" => "all"));
+			$sector = wp_get_post_terms($post->ID, 'sector', array("fields" => "all"));
+			$resource_type = wp_get_post_terms($post->ID, 'resource_type', array("fields" => "all")); ?>
+			
+			<div class="[ sc_column_item ][ post-centre <?php echo $class; ?> ]">
+				<p class="name-term"><?php echo $sector[0]->name; ?></p>
+				<a class="[ post__card ]" href="<?php echo the_permalink(); ?>">
+					<h4 class="[ post__title ]"><?php echo get_the_title() ?></h4>
+					<p class="[ post__author ]">Author: <?php the_author(); ?></p>
+					<hr>
+					<div class="[ cajita ][ working ] ">
+						<p class="[ taxonomy ]">Working Group</p>
+						<p class="[ term ]"><?php echo $working_group[0]->name; ?></p>
+					</div>
+					<div class="[ cajita ][ sector ] ">
+						<p class="[ taxonomy ]">Sector</p>
+						<p class="[ term ]"><?php echo $sector[0]->name; ?></p>
+					</div>
+					<div class="[ cajita ][ type ] ">
+						<p class="[ taxonomy ]">Type</p>
+						<p class="[ term ]"><?php echo $resource_type[0]->name; ?></p>
+					</div>
+				
+				</a>
+			</div>
+		
+			<?php $count++; 
+		endwhile; 
+	endif; ?>
+	
+</div>
+
+<h5 class="sub-title-centre">TYPE</h5>
+
+<div class="[ posts-centre ]">
+
+	<?php $resources_args = array(
+		'post_type' => 'resource',
+		'posts_per_page' => 3,
+		'meta_key' => '_open_contribution_meta',
+		'meta_value' => 'no', 
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'resource_type',
+				'field' => 'slug',
+				'terms' => array('datasets', 'graphics', 'educaplatformstion') 
+				)
+			)
+		);
+
+	$query_resources = new WP_Query( $resources_args );
+	if ( $query_resources->have_posts()) : 
+		$count = 1;
+		while ( $query_resources->have_posts() ) : $query_resources->the_post(); 
+			$class = $count == 3 ? 'ultimo' : ''; 
+			$working_group = wp_get_post_terms($post->ID, 'working_group', array("fields" => "all"));
+			$sector = wp_get_post_terms($post->ID, 'sector', array("fields" => "all"));
+			$resource_type = wp_get_post_terms($post->ID, 'resource_type', array("fields" => "all")); ?>
+			
+			<div class="[ sc_column_item ][ post-centre <?php echo $class; ?> ]">
+
+				<a class="[ post__card ]" href="<?php echo the_permalink(); ?>">
+					<h4 class="[ post__title ]"><?php echo get_the_title() ?></h4>
+					<p class="[ post__author ]">Author: <?php the_author(); ?></p>
+					<hr>
+					<div class="[ cajita ][ working ] ">
+						<p class="[ taxonomy ]">Working Group</p>
+						<p class="[ term ]"><?php echo $working_group[0]->name; ?></p>
+					</div>
+					<div class="[ cajita ][ sector ] ">
+						<p class="[ taxonomy ]">Sector</p>
+						<p class="[ term ]"><?php echo $sector[0]->name; ?></p>
+					</div>
+					<div class="[ cajita ][ type ] ">
+						<p class="[ taxonomy ]">Type</p>
+						<p class="[ term ]"><?php echo $resource_type[0]->name; ?></p>
+					</div>
+				
+				</a>
+			</div>
+		
+			<?php $count++; 
+		endwhile; 
+	endif; ?>
+	
 </div>
 
 <?php get_footer(); ?>

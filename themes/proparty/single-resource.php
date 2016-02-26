@@ -3,7 +3,6 @@
 	get_header(); 
 ?>
 
-
 	<div class="content_wrap">
 		<div class="content">
 

@@ -4646,9 +4646,9 @@ div#booking_calendar_select_label + .booking_cleardiv {
 **/
 
 .resource-centre__filter__title{
-	margin-bottom: 0;
+	margin-bottom: 10px;
 	font: 600 14px/18px "Montserrat";
-	color: #3598db;
+	color: #9c999f;
 }
 
 /**
@@ -4697,3 +4697,46 @@ div#booking_calendar_select_label + .booking_cleardiv {
 .content_home_newsfeed .date-news{text-transform: uppercase; font-size: 19px; font-weight: bold; color:#000;}
 .content_home_newsfeed .date-news span{color: #00b6f1;}
 .text-mision{font-size: 19px; font-family: 'Lora', sans-serif; color: #000; padding-right: 45%; font-style: italic;}
+.me-cannotplay span{color: #f6f6f6;}
+
+/**	RESOURCE CENTRE **/
+.page_top_wrap.page_resource_centre{background-image: url('images/bg/fondo-top-resource.png'); background-size: cover; background-position: 50% 30%; background-repeat: no-repeat; height: auto; padding: 63px 0;}
+.page_top_wrap.page_resource_centre .page_title{ margin-top: 0;text-align: center;line-height: 40px;padding: 0 16%; margin-bottom: 40px;}
+.page_resource_centre .search_form_wrap_resource{position: relative; overflow: hidden; width: 67.5%; margin: 0 auto; background: #f5f5f5; border-radius: 6px; padding: 11px;}
+.page_resource_centre .search_form_wrap_resource input[type="text"]{width: 100%; height: 63px; font-family: 'Montserrat'; font-size: 18px; background: #fff; padding-right: 8.5%; margin-bottom: 18px;}
+.page_resource_centre .search_form_wrap_resource button{position: absolute;margin-right: 11px;width: 8.5%;height: 63px;background: #fff;font-size: 34px;line-height: 8px;text-align: center; padding: 0;}
+.page_resource_centre .search_form_wrap_resource button:hover{color: #ddd;}
+.page_resource_centre{color: #a6a2a8; font-family: 'Montserrat';letter-spacing: -1px;}
+.page_resource_centre input[type="checkbox"]{margin-left: 9px;}
+.page_resource_centre select, .select-search select{background: #00a4e5; width: auto; height: 31px; color: #fff;  margin-left: 15px;}
+
+.sub-title-centre{display: block; overflow: hidden; width: 100%; font-family: 'Montserrat';color: #a09ea4; font-weight: normal; font-size: 20px; margin-bottom: 30px; }
+.posts-centre .post-centre{ width: 31.8%; float: left; margin-right: 1.6%; margin-bottom:50px;}
+.posts-centre .post-centre a{ display: block; overflow: hidden;}
+.posts-centre .post-centre.ultimo{margin-right: 0;}
+.posts-centre .post-centre .circle-img{float: right;}
+.posts-centre .post-centre .post__title{margin-bottom: 3px;}
+.posts-centre .post-centre .post__author{color: #c8c9cb; margin-bottom: 5px;}
+.posts-centre .post-centre hr{ width: 100%; color: #c8c9cb;}
+.posts-centre .post-centre .cajita{position: relative; overflow: hidden; float: left;}
+.posts-centre .post-centre .cajita.working{width: 42.4%;}
+.posts-centre .post-centre .cajita.sector{width: 35.2%;}
+.posts-centre .post-centre .cajita.type{width: 21.5%;}
+.posts-centre .post-centre .cajita .taxonomy{color: #c8c9cb; margin-bottom: 5px; font-size: 15px;line-height: normal;}
+.posts-centre .post-centre .cajita .term{color: #000; font-size: 15px; line-height: normal; margin-bottom: 7px; }
+.posts-centre .post-centre .cajita .date{font-family: 'Montserrat'; font-weight: bold;line-height: normal; margin-bottom: 0;}
+.posts-centre .post-centre .name-term{color: #3598db; margin-bottom: 15px; font-size: 20px;}
+
+.resource-centre-results__section .search_form_wrap{width: 65% !important; margin-top: 12px;}
+.resource-centre-results__section .search_form_wrap input[type="text"],
+.resource-centre-results__section .search_form_wrap button{top:15px;}
+.select-search{width: 33%; float: right; line-height: normal;font-family: 'Montserrat'; letter-spacing: -1px;}
+.select-search select{margin-left: 0;}
+.datos-busquedas-centre, .cont-order-centre{position: relative;width: 100%; height: auto; margin-top: 34px;}
+.datos-busquedas-centre span{display: inline-block; background: #f6f6f6; width: auto; padding: 8px 15px 8px 15px; border-radius: 6px; color: #918d94;}
+.datos-busquedas-centre span img,
+.cont-order-centre span img{width: 15px; margin-top: 5px; margin-left: 15px;}
+.cont-order-centre{text-align: right;}
+.cont-order-centre span{display: inline-block; width: auto;  padding: 5px 0px 5px 0px; color: #fff;border-radius: 6px; margin-left: 5px;font-family: 'Montserrat'; font-size: 13px;}
+.cont-order-centre p{font-family: 'Montserrat'; margin-bottom: 3px;}
+.title-sup-filters{color: #9c999f; font-size: 14px; font-family: 'Montserrat';}

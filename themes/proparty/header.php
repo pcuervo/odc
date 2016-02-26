@@ -186,6 +186,9 @@ $video_bg_show  = axiom_get_custom_option('show_video_bg')=='yes' && (axiom_get_
 				</div>
 			<?php
 			}
+			if ( is_page('resource-centre-1') ) {
+				require_once( axiom_get_file_dir('templates/parts/resource-centre-top.php') );
+			}
 			?>
 
 			<div class="page_content_wrap<?php echo (axiom_get_custom_option('custom_page_paddings') == 'no' ? '' : ' wrap_custom'); ?>"<?php echo (axiom_get_custom_option('show_page_top') == 'no' ? ' ' . trim($header_style) : ''); ?>>

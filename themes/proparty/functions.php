@@ -110,6 +110,12 @@ require_once( 'inc/functions-js-footer.php' );
 
 add_theme_support('post-thumbnails');
 
+if ( function_exists('add_image_size') ){
+
+	add_image_size( 'news-home', 443, 240, true );
+
+}
+
 /**
 * Enqueue frontend scripts and styles
 **/
@@ -350,7 +356,24 @@ function getDateTransform($fecha){
 
 	$mes = array('01' => 'Enero', '02' => 'Febrero', '03' => 'Marzo', '04' => 'Abril', '05' => 'Mayo', '06' =>'Junio', '07' => 'Julio', '08' => 'Agosto', '09' => 'Septiembre', '10' => 'Octubre', '11' => 'Noviembre', '12' => 'Diciembre');
 
-
-
 	return array($fecha[2], $mes[$fecha[1]], $fecha[0], $dia_name, $fecha[1], $MesTresLetras);
+}
+
+
+function getPostCentre($taxonomy, $term){
+	$resources_args = array(
+		'post_type' => 'resource',
+		'posts_per_page' => 1,
+		'meta_key' => '_open_contribution_meta',
+		'meta_value' => 'no', 
+		'tax_query' => array(
+			array(
+				'taxonomy' => $taxonomy,
+				'field' => 'slug',
+				'terms' => $term )
+			)
+		);
+	$result = new WP_Query( $resources_args );
+	
+	return isset($result->posts[0]) ? $result->posts[0] : false;
 }

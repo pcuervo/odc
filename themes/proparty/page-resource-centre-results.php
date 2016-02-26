@@ -1,6 +1,6 @@
 <?php get_header(); 
 $search = isset($_GET['search-resources']) ? $_GET['search-resources'] : '';?>
-<section class="[ column-11_12 column sc_column_item ][ resource-centre-results__section ] [ margin-bottom ]">
+<section class="[ column-12_12 column sc_column_item ][ resource-centre-results__section ] [ margin-bottom ]">
 	<article class="[ article ][ resource-centre__search-wrapper ][ margin-bottom ]">
 		<div class="[ search_wrap search_wrap search_style_regular search_opened ][ width-100 ]" title="Open/close search form">
 			<div class="[ search_form_wrap ]">
@@ -10,7 +10,7 @@ $search = isset($_GET['search-resources']) ? $_GET['search-resources'] : '';?>
 				</form>
 			</div>
 			<div class="[ select-search ]">
-				<input class="input-checkbox" type="checkbox" name="vehicle" value="Car"> I´M FROM A
+				<input class="input-checkbox" type="checkbox" name="vehicle" value="Car"> I´M FROM A<br>
 				<select>
 				  	<option value="volvo">Civil Society Organization</option>
 				</select>
@@ -75,20 +75,19 @@ $search = isset($_GET['search-resources']) ? $_GET['search-resources'] : '';?>
 					$resource_info = get_resource_info( $post->ID );
 					$resource_filter_classes = $class_contri;
 					foreach ( $resource_info as $key => $value ) :
-
 						$resource_filter_classes .= $value . ' ';
 					endforeach;?>
-					<div class="[ column-4_12 sc_column_item ][ post ][ <?php echo $resource_filter_classes; ?>]">
+					<div class="[ column-12_12 sc_column_item ][ post ][ <?php echo $resource_filter_classes; ?>]">
 						<a class="[ post__card ]" href="<?php echo the_permalink(); ?>">
 							<h4 class="[ post__title ]">
 								<?php echo get_the_title() ?>
 							</h4>
-							<?php the_post_thumbnail( 'medium', array( 'class' => '[ post__image ][ image-responsive ]' ) ); ?>
-							<p class="[ post__excerpt ]"><?php echo  get_the_excerpt(); ?></p>
-							<p class="[ post__info ]">Sector: <?php echo get_sector( $post->ID ); ?></p>
+							<p class="[ post__update ]">Last updated: <?php echo get_the_time('d/m/Y') ?></p>
+							<p class="[ post__excerpt ]"><?php echo wp_trim_words( get_the_excerpt(), 26, '...' ) ?></p>
+							<p class="[ post__info_sector ]">Sector: <br/><span><?php echo get_sector( $post->ID ); ?></span></p>
+							<p class="[ post__info_sector ]">by: <br/><span><?php the_author(); ?></span></p>
 							<p class="[ post__info post__country ][ hidden ]"><?php echo get_country( $post->ID ); ?></p>
 							<p class="[ post__info post__date ][ hidden ]" ><?php echo get_the_time('U') ?></p>
-							<p class="[ post__info  ]" >by: <span class="[ post__author ]"><?php echo get_the_author_meta( 'first_name' ) . ' ' . get_the_author_meta( 'last_name' ); ?></span></p>
 						</a>
 					</div>
 				<?php endforeach; 

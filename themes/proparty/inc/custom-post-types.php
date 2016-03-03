@@ -142,6 +142,42 @@ add_action('init', function(){
 	}
 	insert_working_group_taxonomy_terms();
 
+	if( ! taxonomy_exists('principles')){
+
+		$labels = array(
+			'name'              => 'Principles',
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'principles' ),
+		);
+
+		register_taxonomy( 'principles', 'resource', $args );
+	}
+
+	if( ! taxonomy_exists('maturity-level')){
+
+		$labels = array(
+			'name'              => 'Maturity Level',
+		);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'maturity-level' ),
+		);
+
+		register_taxonomy( 'maturity-level', 'resource', $args );
+	}
+
 
 });
 
@@ -209,8 +245,6 @@ function insert_working_group_taxonomy_terms(){
 		wp_insert_term( $group, 'working_group' );
 	}
 }// insert_working_group_taxonomy_terms
-
-
 
 
 

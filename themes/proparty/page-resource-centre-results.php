@@ -45,6 +45,10 @@ $search = isset($_GET['search-resources']) ? $_GET['search-resources'] : '';?>
 				<?php show_filters( 'sector' ); ?>
 				<h6 class="[ resource-centre__filter__title ]">Type:</h6>
 				<?php show_filters( 'resource_type' ); ?>
+				<h6 class="[ resource-centre__filter__title ]">Principles:</h6>
+				<?php show_filters( 'principles' ); ?>
+				<h6 class="[ resource-centre__filter__title ]">Maturity Level:</h6>
+				<?php show_filters( 'maturity-level' ); ?>
 				<h6 class="[ resource-centre__filter__title ]">Contribution:</h6>
 				<div class="option-set" data-group="contribution">
 					<input type="checkbox" value="" id="contribution-all" class="all" checked /><label for="contribution-all">all</label><br />

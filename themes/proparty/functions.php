@@ -242,6 +242,9 @@ function get_resource_info( $post_id ){
 		'country'				=> get_resource_meta_slug( $post_id, 'country' ),
 		'sector'				=> get_resource_meta_slug( $post_id, 'sector' ),
 		'working_group'			=> get_resource_meta_slug( $post_id, 'working_group' ),
+		'principles'			=> get_resource_meta_slug( $post_id, 'principles' ),
+		'maturity-level'		=> get_resource_meta_slug( $post_id, 'maturity-level' ),
+
 		);
 	return $resource_info;
 }// get_resource_info

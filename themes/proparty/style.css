@@ -4742,3 +4742,6 @@ div#booking_calendar_select_label + .booking_cleardiv {
 .cont-order-centre span{display: inline-block; width: auto;  padding: 5px 0px 5px 0px; color: #fff;border-radius: 6px; margin-left: 5px;font-family: 'Montserrat'; font-size: 13px;}
 .cont-order-centre p{font-family: 'Montserrat'; margin-bottom: 3px;}
 .title-sup-filters{color: #9c999f; font-size: 14px; font-family: 'Montserrat';}
+
+.p-adopted{display: block; width: 33.3%; color: #3598db; font-size: 18px; float: left; font-family: 'Montserrat';}
+.p-adopted span{color: #363842; font-size: 14px;}

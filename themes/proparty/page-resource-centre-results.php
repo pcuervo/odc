@@ -10,9 +10,15 @@ $search = isset($_GET['search-resources']) ? $_GET['search-resources'] : '';?>
 				</form>
 			</div>
 			<div class="[ select-search ]">
-				<input class="input-checkbox" type="checkbox" name="vehicle" value="Car"> I´M FROM A<br>
+				I´M FROM A<br>
 				<select>
-				  	<option value="volvo">Civil Society Organization</option>
+				  	<option value="public-sector">Public Sector</option>
+			  		<option value="private-sector">Private Sector</option>
+			  		<option value="donors">Donors, Foundations and International Organizations</option>
+			  		<option value="civil-society">Civil Society Organizations</option>
+			  		<option value="academia-research">Academia / Research</option>
+			  		<option value="civic-hackers">Civic Hackers</option>
+			  		<option value="media">Media</option>
 				</select>
 			</div>
 		</div>

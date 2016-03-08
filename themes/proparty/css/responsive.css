@@ -830,6 +830,8 @@ Samsung Galaxy
 	.content_home_newsfeed p {display: none;}
 
 	.page_top_wrap.page_resource_centre .page_title{padding: 0;}
+	.posts-centre .post-centre{width: 48.6%;margin-right: 0.7%;margin-left: 0.7%;}
+	.posts-centre .post-centre.ultimo{margin-right: 0.7%; clear: left;}
 }
 @media (max-width: 900px) {
 
@@ -1157,7 +1159,11 @@ Very common low res
 	.content_home_newsfeed h3{font-size: 18px;}
 	.page_top_wrap.page_resource_centre .page_title{font-size: 24px;}
 	.page_resource_centre .search_form_wrap_resource{width: 96%;}
+
+	.posts-centre .post-centre{width: 100%; margin-left: 0; margin-right: 0;}
 }
+
+
 @media (max-width: 480px) {
 	/* Revolution Slider */
 	.slider_wrap .slider-1-static-btn img {

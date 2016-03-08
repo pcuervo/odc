@@ -10,11 +10,12 @@ $search = isset($_GET['search-resources']) ? $_GET['search-resources'] : '';?>
 				</form>
 			</div>
 			<div class="[ select-search ]">
-				I´M FROM A<br>
+				I'M FROM A<br>
 				<select>
+					<option value="general-public">General Public</option>
 				  	<option value="public-sector">Public Sector</option>
 			  		<option value="private-sector">Private Sector</option>
-			  		<option value="donors">Donors, Foundations and International Organizations</option>
+			  		<option value="donors">Donors and Foundations</option>
 			  		<option value="civil-society">Civil Society Organizations</option>
 			  		<option value="academia-research">Academia / Research</option>
 			  		<option value="civic-hackers">Civic Hackers</option>
@@ -35,7 +36,8 @@ $search = isset($_GET['search-resources']) ? $_GET['search-resources'] : '';?>
 		<p class="text-right">ORDER BY</p>
 		<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]" data-asc="1" data-sort="date"><span class="[ sc_button_iconed ][ inline-block ]">Date</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
 		<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]" data-asc="1" data-sort="title"><span class="[ sc_button_iconed ][ inline-block ]">Name</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
-		<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]" data-asc="1" data-sort="languaje"><span class="[ sc_button_iconed ][ inline-block ]">Languaje</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
+		<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]" data-asc="1" data-sort="country"><span class="[ sc_button_iconed ][ inline-block ]">Country</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
+		<a href="#" class="[ sc_button sc_button_size_mini ][ color-light ][ js-sort ]" data-asc="1" data-sort="languaje"><span class="[ sc_button_iconed ][ inline-block ]">Language</span> <span class="[ sc_button_iconed icon-angle-down-1 ][ inline-block ]"></span></a>
 	</div>
 </section>
 <section class="[ columns_wrap sc_columns sc_columns_count_12 columns_fluid ][ margin-bottom--large ][ resource-centre-results ]">

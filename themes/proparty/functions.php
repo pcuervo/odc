@@ -125,6 +125,8 @@ add_action( 'wp_enqueue_scripts', function(){
 	wp_enqueue_script( 'plugins', JSPATH.'plugins.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'functions', JSPATH.'functions.js', array('plugins'), '1.0', true );
 
+	wp_localize_script( 'functions', 'theme_path', THEMEPATH );
+
 });
 
 /**
@@ -172,7 +174,7 @@ function show_filters( $taxonomy ){
 	echo '<div class="option-set" data-group="' . $taxonomy . '">';
 	echo '<input type="checkbox" value="" id="' . $taxonomy . '-all" class="all" checked /><label for="' . $taxonomy . '-all">all</label><br />';
 	foreach ( $filters as $filter ) {
-		echo '<input type="checkbox" value=".' . $filter->slug . '" id="' . $filter->slug . '" /><label for="' . $filter->slug . '">' . $filter->name . '</label><br />';
+		echo '<input data-name="'.$filter->name.'" type="checkbox" value=".' . $filter->slug . '" id="' . $filter->slug . '" /><label for="' . $filter->slug . '">' . $filter->name . '</label><br />';
 	}
 	echo '</div>';
 }

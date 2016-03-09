@@ -27,9 +27,8 @@ $search = isset($_GET['search-resources']) ? $_GET['search-resources'] : '';?>
 
 	<div class="datos-busquedas-centre [ margin-bottom ]">
 		<?php if ($search != '') : ?>
-			<span>Search results for “<?php echo $search; ?>”<img src="<?php echo THEMEPATH.'/images/cruz-azul-marca.png' ?>"></span>
+			<span>Search results for “<?php echo $search; ?>”<a href="<?php echo site_url('/resource-centre-results/'); ?>"><img src="<?php echo THEMEPATH.'/images/cruz-azul-marca.png' ?>"></a></span>
 		<?php endif; ?>
-		<span>Implementation<img src="<?php echo THEMEPATH.'/images/cruz-azul-marca.png' ?>"></span>
 	</div>
 	
 	<div class="cont-order-centre">

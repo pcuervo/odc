@@ -94,6 +94,7 @@ function initCheckBoxFilters(){
         $('.button-group a').removeClass('active');
         
         $container.isotope({ filter: comboFilter });
+
     });
 }
 
@@ -132,6 +133,7 @@ function getComboFilter( filters ) {
 function manageCheckbox( $checkbox, filters ) {
     var checkbox = $checkbox[0];
     var group = $checkbox.parents('.option-set').attr('data-group');
+
     // create array for filter group, if not there yet
     var filterGroup = filters[ group ];
     if ( !filterGroup ) {
@@ -145,23 +147,38 @@ function manageCheckbox( $checkbox, filters ) {
         if ( !checkbox.checked ) {
             checkbox.checked = 'checked';
         }
+        $('.'+group+'-a').remove();
     }
     // index of
     var index = $.inArray( checkbox.value, filterGroup );
 
+
     if ( checkbox.checked ) {
         var selector = isAll ? 'input' : 'input.all';
+
         $checkbox.siblings( selector ).removeAttr('checked');
 
         if ( !isAll && index === -1 ) {
             // add filter to group
             filters[ group ].push( checkbox.value );
+           
+        }
+
+        if ( !isAll ){
+            var name = $checkbox.attr('data-name');
+            var slug = $checkbox.attr('id');
+
+            var html = '<span class="'+slug+'-a '+group+'-a" data-filtro="'+slug+'">'+name+'<img class="quitar-filtro" data-filtro="'+slug+'" src="'+theme_path+'/images/cruz-azul-marca.png"></span>';
+            $('.datos-busquedas-centre').append(html);
         }
 
     } else if ( !isAll ) {
+
         console.log('here');
         // remove filter from group
-        filters[ group ].splice( index, 1 );
+        var no_select = filters[ group ].splice( index, 1 );
+
+        $(no_select+'-a').remove();
         // if unchecked the last box, check the all
         // if ( !$checkbox.siblings('checked').length ) {
         //     $checkbox.siblings('input.all').attr('checked', 'checked');
@@ -169,4 +186,25 @@ function manageCheckbox( $checkbox, filters ) {
     }
 
 }
+
+$(document).on('click','.quitar-filtro', function(){
+    var filtro = $(this).attr('data-filtro');
+    var comboFilter = [];
+    $('#'+filtro).removeAttr('checked');
+    $('.'+filtro+'-a').remove();
+
+    $(".datos-busquedas-centre span").each(function (index, element) 
+    { 
+       comboFilter.push('.'+$(this).attr('data-filtro'));
+
+    });
+
+    var comboFilter = comboFilter.join(', ');
+
+    $('.posts-container').isotope({ filter: comboFilter });
+
+    comboFilter = [];
+
+   
+});
 
